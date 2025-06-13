@@ -21,8 +21,10 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ isDark, setIsDark }) => {
         size="icon"
         onClick={() => setIsDark(!isDark)}
         className={`rounded-full ${
-          isDark ? 'bg-gray-800 border-gray-600' : 'bg-white border-gray-300'
-        }`}
+          isDark 
+            ? 'bg-gray-800 border-gray-600 hover:bg-gray-700' 
+            : 'bg-white border-gray-300 hover:bg-gray-50'
+        } shadow-lg transition-all duration-300`}
       >
         <motion.div
           whileHover={{ rotate: 180 }}

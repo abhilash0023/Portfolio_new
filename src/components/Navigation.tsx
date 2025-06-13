@@ -16,7 +16,6 @@ const Navigation: React.FC<NavigationProps> = ({ isDark }) => {
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Profiles', href: '#coding-profiles' },
     { name: 'Social', href: '#social-links' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -35,8 +34,8 @@ const Navigation: React.FC<NavigationProps> = ({ isDark }) => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl ${
-        isDark ? 'bg-gray-900/90' : 'bg-white/90'
-      } border-b border-gray-200/20 shadow-lg`}
+        isDark ? 'bg-gray-900/90' : 'bg-white/95'
+      } border-b ${isDark ? 'border-gray-200/20' : 'border-gray-200/50'} shadow-lg`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
@@ -61,8 +60,10 @@ const Navigation: React.FC<NavigationProps> = ({ isDark }) => {
                 }}
                 onClick={() => scrollToSection(item.href)}
                 className={`${
-                  isDark ? 'text-gray-200 hover:text-white' : 'text-gray-600 hover:text-gray-900'
-                } transition-all duration-200 font-medium px-3 py-2 rounded-lg hover:bg-white/10 backdrop-blur-sm`}
+                  isDark ? 'text-gray-200 hover:text-white' : 'text-gray-700 hover:text-gray-900'
+                } transition-all duration-200 font-medium px-3 py-2 rounded-lg ${
+                  isDark ? 'hover:bg-white/10' : 'hover:bg-gray-100/70'
+                } backdrop-blur-sm`}
               >
                 {item.name}
               </motion.button>
@@ -73,7 +74,7 @@ const Navigation: React.FC<NavigationProps> = ({ isDark }) => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden hover:bg-white/10"
+            className={`md:hidden ${isDark ? 'hover:bg-white/10' : 'hover:bg-gray-100/70'}`}
             onClick={() => setIsOpen(!isOpen)}
           >
             <AnimatePresence mode="wait">
@@ -85,7 +86,7 @@ const Navigation: React.FC<NavigationProps> = ({ isDark }) => {
                   exit={{ rotate: 90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <X className="h-6 w-6 text-white" />
+                  <X className={`h-6 w-6 ${isDark ? 'text-white' : 'text-gray-700'}`} />
                 </motion.div>
               ) : (
                 <motion.div
@@ -95,7 +96,7 @@ const Navigation: React.FC<NavigationProps> = ({ isDark }) => {
                   exit={{ rotate: -90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Menu className="h-6 w-6 text-white" />
+                  <Menu className={`h-6 w-6 ${isDark ? 'text-white' : 'text-gray-700'}`} />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -110,7 +111,9 @@ const Navigation: React.FC<NavigationProps> = ({ isDark }) => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden pb-4 bg-gray-800/50 backdrop-blur-sm rounded-lg mx-2 mb-4"
+              className={`md:hidden pb-4 ${
+                isDark ? 'bg-gray-800/50' : 'bg-white/70'
+              } backdrop-blur-sm rounded-lg mx-2 mb-4`}
             >
               {navItems.map((item, index) => (
                 <motion.button
@@ -120,7 +123,9 @@ const Navigation: React.FC<NavigationProps> = ({ isDark }) => {
                   transition={{ delay: index * 0.1 }}
                   onClick={() => scrollToSection(item.href)}
                   className={`block w-full text-left py-3 px-6 rounded-lg ${
-                    isDark ? 'text-gray-200 hover:bg-gray-700/50 hover:text-white' : 'text-gray-600 hover:bg-gray-100'
+                    isDark 
+                      ? 'text-gray-200 hover:bg-gray-700/50 hover:text-white' 
+                      : 'text-gray-700 hover:bg-gray-100/70 hover:text-gray-900'
                   } transition-all duration-200 font-medium`}
                 >
                   {item.name}
