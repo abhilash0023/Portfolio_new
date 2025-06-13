@@ -1,17 +1,7 @@
 
-import React, { Suspense } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import { Box, OrbitControls } from '@react-three/drei';
 import { Button } from '@/components/ui/button';
-
-const AnimatedAvatar = () => {
-  return (
-    <Box args={[2, 2, 2]} rotation={[0, 0, 0]}>
-      <meshStandardMaterial color="#8B5CF6" />
-    </Box>
-  );
-};
 
 const AboutSection = () => {
   const downloadResume = () => {
@@ -45,16 +35,22 @@ const AboutSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="h-96"
+            className="h-96 flex items-center justify-center"
           >
-            <Canvas>
-              <Suspense fallback={null}>
-                <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={2} />
-                <ambientLight intensity={0.5} />
-                <directionalLight position={[10, 10, 5]} intensity={1} />
-                <AnimatedAvatar />
-              </Suspense>
-            </Canvas>
+            {/* Animated gradient shape instead of 3D avatar */}
+            <motion.div
+              animate={{
+                scale: [1, 1.2, 1],
+                rotate: [0, 90, 180, 270, 360],
+              }}
+              transition={{
+                duration: 10,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              className="w-48 h-48 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 opacity-30 blur-lg"
+              style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}
+            />
           </motion.div>
 
           <motion.div

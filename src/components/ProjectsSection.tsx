@@ -1,17 +1,7 @@
 
-import React, { Suspense } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import { Box, OrbitControls } from '@react-three/drei';
 import { Button } from '@/components/ui/button';
-
-const Project3D = ({ color }: { color: string }) => {
-  return (
-    <Box args={[1.5, 1.5, 1.5]}>
-      <meshStandardMaterial color={color} />
-    </Box>
-  );
-};
 
 const ProjectCard = ({ project, index }: { project: any; index: number }) => {
   return (
@@ -23,15 +13,21 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
       whileHover={{ y: -10 }}
       className="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700/50 group"
     >
-      <div className="h-48 relative overflow-hidden">
-        <Canvas>
-          <Suspense fallback={null}>
-            <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={5} />
-            <ambientLight intensity={0.5} />
-            <directionalLight position={[10, 10, 5]} intensity={1} />
-            <Project3D color={project.color} />
-          </Suspense>
-        </Canvas>
+      <div className="h-48 relative overflow-hidden flex items-center justify-center" style={{ backgroundColor: project.color }}>
+        {/* Animated geometric shape instead of 3D object */}
+        <motion.div
+          animate={{
+            rotate: [0, 360],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="w-24 h-24 bg-white/20 backdrop-blur-sm"
+          style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
       </div>
       
