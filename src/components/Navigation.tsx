@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
@@ -15,6 +16,8 @@ const Navigation: React.FC<NavigationProps> = ({ isDark }) => {
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Profiles', href: '#coding-profiles' },
+    { name: 'Social', href: '#social-links' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -31,32 +34,35 @@ const Navigation: React.FC<NavigationProps> = ({ isDark }) => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md ${
-        isDark ? 'bg-gray-900/80' : 'bg-white/80'
-      } border-b border-gray-200/20`}
+      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl ${
+        isDark ? 'bg-gray-900/90' : 'bg-white/90'
+      } border-b border-gray-200/20 shadow-lg`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className={`text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent`}
+            className={`text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent drop-shadow-sm`}
           >
             Portfolio
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-6">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.name}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ 
+                  scale: 1.1,
+                  textShadow: "0px 0px 8px rgba(255,255,255,0.8)"
+                }}
                 onClick={() => scrollToSection(item.href)}
                 className={`${
-                  isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
-                } transition-colors duration-200`}
+                  isDark ? 'text-gray-200 hover:text-white' : 'text-gray-600 hover:text-gray-900'
+                } transition-all duration-200 font-medium px-3 py-2 rounded-lg hover:bg-white/10 backdrop-blur-sm`}
               >
                 {item.name}
               </motion.button>
@@ -67,7 +73,7 @@ const Navigation: React.FC<NavigationProps> = ({ isDark }) => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden hover:bg-white/10"
             onClick={() => setIsOpen(!isOpen)}
           >
             <AnimatePresence mode="wait">
@@ -79,7 +85,7 @@ const Navigation: React.FC<NavigationProps> = ({ isDark }) => {
                   exit={{ rotate: 90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <X className="h-6 w-6" />
+                  <X className="h-6 w-6 text-white" />
                 </motion.div>
               ) : (
                 <motion.div
@@ -89,7 +95,7 @@ const Navigation: React.FC<NavigationProps> = ({ isDark }) => {
                   exit={{ rotate: -90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Menu className="h-6 w-6" />
+                  <Menu className="h-6 w-6 text-white" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -104,7 +110,7 @@ const Navigation: React.FC<NavigationProps> = ({ isDark }) => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden pb-4"
+              className="md:hidden pb-4 bg-gray-800/50 backdrop-blur-sm rounded-lg mx-2 mb-4"
             >
               {navItems.map((item, index) => (
                 <motion.button
@@ -113,9 +119,9 @@ const Navigation: React.FC<NavigationProps> = ({ isDark }) => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => scrollToSection(item.href)}
-                  className={`block w-full text-left py-2 px-4 rounded-lg ${
-                    isDark ? 'text-gray-300 hover:bg-gray-800' : 'text-gray-600 hover:bg-gray-100'
-                  } transition-colors duration-200`}
+                  className={`block w-full text-left py-3 px-6 rounded-lg ${
+                    isDark ? 'text-gray-200 hover:bg-gray-700/50 hover:text-white' : 'text-gray-600 hover:bg-gray-100'
+                  } transition-all duration-200 font-medium`}
                 >
                   {item.name}
                 </motion.button>
