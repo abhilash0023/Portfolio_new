@@ -5,7 +5,6 @@ import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import SkillsSection from '../components/SkillsSection';
 import ProjectsSection from '../components/ProjectsSection';
-import ArticlesSection from '../components/ArticlesSection';
 import ContactSection from '../components/ContactSection';
 import Navigation from '../components/Navigation';
 import ThemeToggle from '../components/ThemeToggle';
@@ -18,7 +17,7 @@ const Index = () => {
   return (
     <div className={`min-h-screen ${isDark ? 'dark bg-gray-900' : 'bg-white'} transition-all duration-500`}>
       <div className="relative">
-        {/* Simple animated background instead of particles for now */}
+        {/* Simple animated background */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20 animate-pulse" />
         </div>
@@ -38,7 +37,6 @@ const Index = () => {
               <AboutSection />
               <SkillsSection />
               <ProjectsSection />
-              <ArticlesSection />
               <ContactSection />
             </motion.div>
           </AnimatePresence>
