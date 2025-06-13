@@ -1,24 +1,8 @@
 
-import React, { Suspense } from 'react';
+import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
-
-const AnimatedSphere = () => {
-  return (
-    <Sphere visible args={[1, 100, 200]} scale={2}>
-      <MeshDistortMaterial
-        color="#4F46E5"
-        attach="material"
-        distort={0.3}
-        speed={1.5}
-        roughness={0.4}
-      />
-    </Sphere>
-  );
-};
 
 const HeroSection = () => {
   const scrollToAbout = () => {
@@ -125,16 +109,21 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5, type: "spring", stiffness: 100 }}
-          className="h-96 md:h-[500px]"
+          className="h-96 md:h-[500px] flex items-center justify-center"
         >
-          <Canvas>
-            <Suspense fallback={null}>
-              <OrbitControls enableZoom={false} enablePan={false} />
-              <ambientLight intensity={0.5} />
-              <directionalLight position={[10, 10, 5]} intensity={1} />
-              <AnimatedSphere />
-            </Suspense>
-          </Canvas>
+          {/* Animated gradient orb instead of 3D sphere for now */}
+          <motion.div
+            animate={{
+              scale: [1, 1.1, 1],
+              rotate: [0, 180, 360],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            className="w-64 h-64 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-20 blur-xl"
+          />
         </motion.div>
       </div>
 
