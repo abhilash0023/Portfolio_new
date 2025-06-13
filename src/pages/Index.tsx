@@ -2,7 +2,7 @@
 import React, { useCallback, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Particles from 'react-particles';
-import { loadFull } from 'tsparticles';
+import { loadFull } from 'tsparticles-engine';
 import type { Engine } from 'tsparticles-engine';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
@@ -66,7 +66,7 @@ const Index = () => {
         enable: true,
       },
       move: {
-        direction: "none",
+        direction: "none" as const,
         enable: true,
         outModes: {
           default: "bounce",
