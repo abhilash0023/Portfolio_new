@@ -13,8 +13,8 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ isDark }) => {
       name: 'LinkedIn',
       url: 'https://linkedin.com/in/johndoe',
       icon: Linkedin,
-      color: isDark ? 'hover:text-blue-400' : 'hover:text-blue-600',
-      bgColor: isDark ? 'hover:bg-blue-500/20' : 'hover:bg-blue-100'
+      color: isDark ? 'hover:text-teal-400' : 'hover:text-teal-600',
+      bgColor: isDark ? 'hover:bg-teal-500/20' : 'hover:bg-teal-100'
     },
     {
       name: 'GitHub',
@@ -27,8 +27,8 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ isDark }) => {
       name: 'Instagram',
       url: 'https://instagram.com/johndoe',
       icon: Instagram,
-      color: isDark ? 'hover:text-pink-400' : 'hover:text-pink-600',
-      bgColor: isDark ? 'hover:bg-pink-500/20' : 'hover:bg-pink-100'
+      color: isDark ? 'hover:text-emerald-400' : 'hover:text-emerald-600',
+      bgColor: isDark ? 'hover:bg-emerald-500/20' : 'hover:bg-emerald-100'
     },
     {
       name: 'YouTube',
@@ -50,8 +50,8 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ isDark }) => {
     <section id="social-links" className="py-20 relative">
       <div className={`absolute inset-0 ${
         isDark 
-          ? 'bg-gradient-to-br from-gray-900 via-blue-900/20 to-purple-900/20' 
-          : 'bg-gradient-to-br from-gray-50 via-blue-50/50 to-purple-50/50'
+          ? 'bg-gradient-to-br from-gray-900 via-teal-900/20 to-emerald-900/20' 
+          : 'bg-gradient-to-br from-gray-50/80 via-teal-50/60 to-emerald-50/60'
       }`} />
       
       <div className="container mx-auto px-4 relative z-10">
@@ -65,7 +65,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ isDark }) => {
           <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${
             isDark ? 'text-white' : 'text-gray-900'
           }`}>
-            Connect <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">With Me</span>
+            Connect <span className="bg-gradient-to-r from-teal-500 to-emerald-500 bg-clip-text text-transparent">With Me</span>
           </h2>
           <p className={`text-xl max-w-2xl mx-auto ${
             isDark ? 'text-gray-300' : 'text-gray-600'
@@ -105,8 +105,8 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ isDark }) => {
                 viewport={{ once: true }}
                 className={`group relative w-16 h-16 flex items-center justify-center rounded-full ${
                   isDark 
-                    ? 'bg-gray-800/50 border-gray-700/50 text-gray-400' 
-                    : 'bg-white/80 border-gray-300/50 text-gray-600'
+                    ? 'bg-gray-800/60 border-gray-700/60 text-gray-400' 
+                    : 'bg-white/90 border-gray-300/60 text-gray-600'
                 } backdrop-blur-sm border ${platform.color} ${platform.bgColor} transition-all duration-300 shadow-lg hover:shadow-xl ${
                   isDark ? 'hover:border-gray-600' : 'hover:border-gray-400'
                 }`}

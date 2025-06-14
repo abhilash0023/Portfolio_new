@@ -50,7 +50,7 @@ CONTACT:
     >
       <Button
         onClick={downloadResume}
-        className="group bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-blue-500/25"
+        className="group bg-gradient-to-r from-teal-600 to-emerald-700 hover:from-teal-700 hover:to-emerald-800 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-teal-500/25"
       >
         <motion.div
           className="flex items-center space-x-3"

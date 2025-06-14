@@ -6,7 +6,7 @@ import DownloadResume from './DownloadResume';
 const AboutSection = () => {
   return (
     <section id="about" className="py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-100/50 via-blue-100/50 to-indigo-100/50 dark:from-purple-900/20 dark:via-blue-900/20 dark:to-indigo-900/20" />
+      <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/60 via-teal-50/60 to-cyan-50/60 dark:from-emerald-900/20 dark:via-teal-900/20 dark:to-cyan-900/20" />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -17,7 +17,7 @@ const AboutSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 drop-shadow-lg">
-            About <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Me</span>
+            About <span className="bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">Me</span>
           </h2>
         </motion.div>
 
@@ -41,9 +41,9 @@ const AboutSection = () => {
               }}
               className="relative w-48 h-48"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 opacity-60 dark:opacity-40 blur-xl rounded-full" />
+              <div className="absolute inset-0 bg-gradient-to-r from-teal-400 via-emerald-400 to-cyan-400 opacity-60 dark:opacity-40 blur-xl rounded-full" />
               <div 
-                className="absolute inset-4 bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-600 opacity-80 dark:opacity-60 rounded-full"
+                className="absolute inset-4 bg-gradient-to-r from-teal-500 via-emerald-600 to-cyan-600 opacity-80 dark:opacity-60 rounded-full"
                 style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}
               />
             </motion.div>
@@ -60,7 +60,7 @@ const AboutSection = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="bg-white/80 dark:bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-gray-200/50 dark:border-gray-700/30"
+              className="bg-white/90 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-200/70 dark:border-gray-700/50"
             >
               <p className="text-lg text-gray-800 dark:text-gray-200 leading-relaxed font-medium">
                 I'm a passionate full-stack developer with a love for creating innovative
@@ -73,7 +73,7 @@ const AboutSection = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="bg-white/80 dark:bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-gray-200/50 dark:border-gray-700/30"
+              className="bg-white/90 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-200/70 dark:border-gray-700/50"
             >
               <p className="text-lg text-gray-800 dark:text-gray-200 leading-relaxed font-medium">
                 My journey in software development spans over 5 years, during which I've
