@@ -6,7 +6,11 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 
-const ContactSection = () => {
+interface ContactSectionProps {
+  isDark?: boolean;
+}
+
+const ContactSection: React.FC<ContactSectionProps> = ({ isDark = false }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -39,16 +43,20 @@ const ContactSection = () => {
   };
 
   const socialLinks = [
-    { name: 'GitHub', url: '#', color: 'hover:text-gray-400' },
-    { name: 'LinkedIn', url: '#', color: 'hover:text-blue-400' },
-    { name: 'Twitter', url: '#', color: 'hover:text-cyan-400' },
-    { name: 'Instagram', url: '#', color: 'hover:text-pink-400' },
-    { name: 'YouTube', url: '#', color: 'hover:text-red-400' },
+    { name: 'GitHub', url: '#', color: 'hover:text-blue-400' },
+    { name: 'LinkedIn', url: '#', color: 'hover:text-blue-500' },
+    { name: 'Twitter', url: '#', color: 'hover:text-blue-400' },
+    { name: 'Instagram', url: '#', color: 'hover:text-blue-600' },
+    { name: 'YouTube', url: '#', color: 'hover:text-blue-500' },
   ];
 
   return (
     <section id="contact" className="py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-purple-900/20 to-blue-900/20" />
+      <div className={`absolute inset-0 ${
+        isDark 
+          ? 'bg-gradient-to-br from-black via-gray-900 to-slate-800' 
+          : 'bg-gradient-to-br from-white via-blue-50 to-blue-100'
+      }`} />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -58,10 +66,14 @@ const ContactSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Get In <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Touch</span>
+          <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${
+            isDark ? 'text-white' : 'text-black'
+          }`}>
+            Get In <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Touch</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className={`text-xl max-w-2xl mx-auto ${
+            isDark ? 'text-gray-300' : 'text-gray-700'
+          }`}>
             Let's collaborate on your next project or just have a conversation
           </p>
         </motion.div>
@@ -75,8 +87,12 @@ const ContactSection = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-white mb-4">Let's Connect</h3>
-              <p className="text-gray-300 leading-relaxed">
+              <h3 className={`text-2xl font-bold mb-4 ${
+                isDark ? 'text-white' : 'text-black'
+              }`}>Let's Connect</h3>
+              <p className={`leading-relaxed ${
+                isDark ? 'text-gray-300' : 'text-gray-700'
+              }`}>
                 I'm always interested in new opportunities and exciting projects. 
                 Whether you have a question, want to collaborate, or just want to say hi, 
                 feel free to reach out!
@@ -85,27 +101,29 @@ const ContactSection = () => {
 
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
-                  📧
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
+                  <span className="text-white text-sm">📧</span>
                 </div>
-                <span className="text-gray-300">contact@example.com</span>
+                <span className={isDark ? 'text-gray-300' : 'text-gray-700'}>contact@example.com</span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-                  📱
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
+                  <span className="text-white text-sm">📱</span>
                 </div>
-                <span className="text-gray-300">+1 (555) 123-4567</span>
+                <span className={isDark ? 'text-gray-300' : 'text-gray-700'}>+1 (555) 123-4567</span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                  📍
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
+                  <span className="text-white text-sm">📍</span>
                 </div>
-                <span className="text-gray-300">San Francisco, CA</span>
+                <span className={isDark ? 'text-gray-300' : 'text-gray-700'}>San Francisco, CA</span>
               </div>
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
+              <h4 className={`text-lg font-semibold mb-4 ${
+                isDark ? 'text-white' : 'text-black'
+              }`}>Follow Me</h4>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
@@ -113,7 +131,9 @@ const ContactSection = () => {
                     href={social.url}
                     whileHover={{ scale: 1.2, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
-                    className={`text-gray-400 ${social.color} transition-colors duration-200 text-lg font-medium`}
+                    className={`${
+                      isDark ? 'text-gray-400' : 'text-gray-600'
+                    } ${social.color} transition-colors duration-200 text-lg font-medium`}
                   >
                     {social.name}
                   </motion.a>
@@ -128,7 +148,11 @@ const ContactSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
             onSubmit={handleSubmit}
-            className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700/50 space-y-6"
+            className={`p-8 rounded-xl border space-y-6 backdrop-blur-sm ${
+              isDark 
+                ? 'bg-black/50 border-gray-700/50' 
+                : 'bg-white/80 border-blue-200/50 shadow-lg'
+            }`}
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -142,7 +166,11 @@ const ContactSection = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-purple-500"
+                className={`border focus:ring-2 focus:ring-blue-500 ${
+                  isDark 
+                    ? 'bg-gray-800/50 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500' 
+                    : 'bg-white border-blue-200 text-black placeholder-gray-500 focus:border-blue-400'
+                }`}
               />
             </motion.div>
 
@@ -158,7 +186,11 @@ const ContactSection = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-purple-500"
+                className={`border focus:ring-2 focus:ring-blue-500 ${
+                  isDark 
+                    ? 'bg-gray-800/50 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500' 
+                    : 'bg-white border-blue-200 text-black placeholder-gray-500 focus:border-blue-400'
+                }`}
               />
             </motion.div>
 
@@ -174,7 +206,11 @@ const ContactSection = () => {
                 onChange={handleChange}
                 required
                 rows={5}
-                className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-purple-500 resize-none"
+                className={`border focus:ring-2 focus:ring-blue-500 resize-none ${
+                  isDark 
+                    ? 'bg-gray-800/50 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500' 
+                    : 'bg-white border-blue-200 text-black placeholder-gray-500 focus:border-blue-400'
+                }`}
               />
             </motion.div>
 
@@ -186,7 +222,7 @@ const ContactSection = () => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white py-3 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-3 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </Button>

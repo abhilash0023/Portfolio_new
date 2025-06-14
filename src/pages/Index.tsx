@@ -35,7 +35,7 @@ const Index = () => {
       exit="out"
       variants={pageVariants}
       transition={pageTransition}
-      className={`min-h-screen ${isDark ? 'dark bg-slate-900' : 'bg-white'} transition-all duration-500 relative overflow-x-hidden`}
+      className={`min-h-screen ${isDark ? 'dark bg-black' : 'bg-white'} transition-all duration-500 relative overflow-x-hidden`}
     >
       {/* Enhanced Interactive Particles Background */}
       <ParticlesBackground isDark={isDark} />
@@ -57,7 +57,7 @@ const Index = () => {
             <ProfessionalSkillsSection />
             <EnhancedProjectsSection />
             <SocialLinks isDark={isDark} />
-            <ContactSection />
+            <ContactSection isDark={isDark} />
           </motion.div>
         </AnimatePresence>
       </div>

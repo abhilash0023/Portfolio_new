@@ -20,15 +20,16 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ isDark, setIsDark }) => {
         variant="outline"
         size="icon"
         onClick={() => setIsDark(!isDark)}
-        className={`rounded-full ${
+        className={`rounded-full shadow-lg transition-all duration-300 ${
           isDark 
-            ? 'bg-gray-800 border-gray-600 hover:bg-gray-700' 
-            : 'bg-white border-gray-300 hover:bg-gray-50'
-        } shadow-lg transition-all duration-300`}
+            ? 'bg-black/80 border-gray-600 hover:bg-gray-800 text-white' 
+            : 'bg-white/90 border-blue-200 hover:bg-blue-50 text-black backdrop-blur-sm'
+        }`}
       >
         <motion.div
           whileHover={{ rotate: 180 }}
           transition={{ duration: 0.3 }}
+          className="text-xl"
         >
           {isDark ? '🌙' : '☀️'}
         </motion.div>
