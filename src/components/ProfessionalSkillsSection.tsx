@@ -13,7 +13,7 @@ const ProfessionalSkillsSection: React.FC<ProfessionalSkillsSectionProps> = ({ i
     {
       category: "Frontend Development",
       skills: [
-        { name: "React/Next.js", level: 95, icon: "⚛️" },
+        { name: "React", level: 95, icon: "⚛️" },
         { name: "JavaScript (ES6+)", level: 95, icon: "🟨" },
         { name: "HTML5", level: 95, icon: "🧡" },
         { name: "CSS3", level: 95, icon: "🔵" },
