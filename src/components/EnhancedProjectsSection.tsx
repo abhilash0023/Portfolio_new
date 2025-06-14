@@ -4,7 +4,11 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github, Eye, Code, Star, GitFork } from 'lucide-react';
 
-const ProjectCard3D = ({ project, index }: { project: any; index: number }) => {
+interface EnhancedProjectsSectionProps {
+  isDark?: boolean;
+}
+
+const ProjectCard3D = ({ project, index, isDark }: { project: any; index: number; isDark?: boolean }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -19,7 +23,11 @@ const ProjectCard3D = ({ project, index }: { project: any; index: number }) => {
       className="group perspective-1000"
       style={{ transformStyle: "preserve-3d" }}
     >
-      <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200 group-hover:border-blue-300 transition-all duration-500 transform-gpu shadow-lg hover:shadow-blue-500/25">
+      <div className={`relative backdrop-blur-sm rounded-2xl overflow-hidden border transition-all duration-500 transform-gpu shadow-lg ${
+        isDark 
+          ? 'bg-gray-800/90 border-gray-700 group-hover:border-blue-500 hover:shadow-blue-500/25'
+          : 'bg-white/90 border-gray-200 group-hover:border-blue-300 hover:shadow-blue-500/25'
+      }`}>
         {/* Project Image */}
         <div className="relative h-64 overflow-hidden">
           <motion.img
@@ -69,7 +77,11 @@ const ProjectCard3D = ({ project, index }: { project: any; index: number }) => {
             <div className="flex space-x-4">
               <Button
                 size="sm"
-                className="bg-white/90 backdrop-blur-sm border border-gray-200 hover:bg-white text-black"
+                className={`backdrop-blur-sm border transition-colors ${
+                  isDark 
+                    ? 'bg-gray-800/90 border-gray-600 hover:bg-gray-700 text-white'
+                    : 'bg-white/90 border-gray-200 hover:bg-white text-black'
+                }`}
               >
                 <Eye className="w-4 h-4 mr-2" />
                 Preview
@@ -77,7 +89,11 @@ const ProjectCard3D = ({ project, index }: { project: any; index: number }) => {
               <Button
                 size="sm"
                 variant="outline"
-                className="border-white/80 text-white hover:bg-white/20"
+                className={`backdrop-blur-sm transition-colors ${
+                  isDark 
+                    ? 'border-gray-600 text-gray-300 hover:bg-gray-700/80 hover:text-white'
+                    : 'border-white/80 text-white hover:bg-white/20'
+                }`}
               >
                 <Code className="w-4 h-4 mr-2" />
                 Code
@@ -89,10 +105,14 @@ const ProjectCard3D = ({ project, index }: { project: any; index: number }) => {
         {/* Content */}
         <div className="p-6 space-y-4">
           <div>
-            <h3 className="text-2xl font-bold text-black mb-2 group-hover:text-blue-600 transition-colors">
+            <h3 className={`text-2xl font-bold mb-2 group-hover:text-blue-600 transition-colors ${
+              isDark ? 'text-white' : 'text-black'
+            }`}>
               {project.title}
             </h3>
-            <p className="text-gray-700 line-clamp-3 leading-relaxed">
+            <p className={`line-clamp-3 leading-relaxed ${
+              isDark ? 'text-gray-300' : 'text-gray-700'
+            }`}>
               {project.description}
             </p>
           </div>
@@ -103,7 +123,11 @@ const ProjectCard3D = ({ project, index }: { project: any; index: number }) => {
               <motion.span
                 key={tech}
                 whileHover={{ scale: 1.1 }}
-                className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium border border-blue-200"
+                className={`px-3 py-1 rounded-full text-sm font-medium border ${
+                  isDark 
+                    ? 'bg-blue-900/50 text-blue-300 border-blue-700'
+                    : 'bg-blue-100 text-blue-700 border-blue-200'
+                }`}
               >
                 {tech}
               </motion.span>
@@ -120,7 +144,11 @@ const ProjectCard3D = ({ project, index }: { project: any; index: number }) => {
             </Button>
             <Button
               variant="outline"
-              className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-black"
+              className={`transition-colors ${
+                isDark 
+                  ? 'border-gray-600 text-gray-300 hover:bg-gray-700 hover:text-white'
+                  : 'border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-black'
+              }`}
             >
               <Github className="w-4 h-4 mr-2" />
               Code
@@ -142,7 +170,7 @@ const ProjectCard3D = ({ project, index }: { project: any; index: number }) => {
   );
 };
 
-const EnhancedProjectsSection = () => {
+const EnhancedProjectsSection: React.FC<EnhancedProjectsSectionProps> = ({ isDark = false }) => {
   const projects = [
     {
       title: 'AI-Powered E-Commerce Platform',
@@ -202,12 +230,21 @@ const EnhancedProjectsSection = () => {
 
   return (
     <section id="projects" className="py-20 relative overflow-hidden">
-      {/* Clean background with light blue accents */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-gray-50" />
+      {/* Background with proper dark/light mode support */}
+      <div className={`absolute inset-0 ${
+        isDark 
+          ? 'bg-gradient-to-br from-black via-gray-900 to-gray-800'
+          : 'bg-gradient-to-br from-white via-blue-50 to-gray-50'
+      }`} />
       <motion.div
         className="absolute inset-0"
         animate={{
-          background: [
+          background: isDark ? [
+            "radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 50%)",
+            "radial-gradient(circle at 100% 100%, rgba(147, 197, 253, 0.15) 0%, transparent 50%)",
+            "radial-gradient(circle at 0% 100%, rgba(59, 130, 246, 0.15) 0%, transparent 50%)",
+            "radial-gradient(circle at 100% 0%, rgba(147, 197, 253, 0.15) 0%, transparent 50%)"
+          ] : [
             "radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.1) 0%, transparent 50%)",
             "radial-gradient(circle at 100% 100%, rgba(147, 197, 253, 0.1) 0%, transparent 50%)",
             "radial-gradient(circle at 0% 100%, rgba(59, 130, 246, 0.1) 0%, transparent 50%)",
@@ -234,7 +271,9 @@ const EnhancedProjectsSection = () => {
             Featured <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 bg-clip-text text-transparent">Projects</span>
           </motion.h2>
           <motion.p 
-            className="text-xl text-gray-700 max-w-3xl mx-auto"
+            className={`text-xl max-w-3xl mx-auto ${
+              isDark ? 'text-gray-300' : 'text-gray-700'
+            }`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -246,7 +285,7 @@ const EnhancedProjectsSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <ProjectCard3D key={project.title} project={project} index={index} />
+            <ProjectCard3D key={project.title} project={project} index={index} isDark={isDark} />
           ))}
         </div>
       </div>

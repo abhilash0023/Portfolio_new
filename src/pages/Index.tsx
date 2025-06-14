@@ -59,7 +59,7 @@ const Index = () => {
             <EnhancedHeroSection isDark={isDark} />
             <AboutSection isDark={isDark} />
             <ProfessionalSkillsSection />
-            <EnhancedProjectsSection />
+            <EnhancedProjectsSection isDark={isDark} />
             <SocialLinks isDark={isDark} />
             <ContactSection isDark={isDark} />
           </motion.div>
