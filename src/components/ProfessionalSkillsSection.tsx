@@ -10,20 +10,16 @@ const ProfessionalSkillsSection = () => {
       category: "Frontend Development",
       skills: [
         { name: "React/Next.js", level: 95, icon: "⚛️" },
-        { name: "TypeScript", level: 90, icon: "📘" },
         { name: "JavaScript (ES6+)", level: 95, icon: "🟨" },
         { name: "HTML5 & CSS3", level: 95, icon: "🎨" },
-        { name: "Tailwind CSS", level: 90, icon: "💨" },
-        { name: "Framer Motion", level: 85, icon: "🎬" }
+        { name: "Bootstrap", level: 90, icon: "🅱️" }
       ]
     },
     {
       category: "Backend Development",
       skills: [
         { name: "Node.js", level: 85, icon: "🟩" },
-        { name: "Python", level: 80, icon: "🐍" },
         { name: "Express.js", level: 85, icon: "🚀" },
-        { name: "PostgreSQL", level: 80, icon: "🐘" },
         { name: "MongoDB", level: 75, icon: "🍃" },
         { name: "REST APIs", level: 90, icon: "🔗" }
       ]
@@ -34,8 +30,6 @@ const ProfessionalSkillsSection = () => {
         { name: "Git & GitHub", level: 90, icon: "📝" },
         { name: "Docker", level: 75, icon: "🐳" },
         { name: "AWS Cloud", level: 70, icon: "☁️" },
-        { name: "Three.js", level: 80, icon: "🎯" },
-        { name: "Figma", level: 85, icon: "🎨" },
         { name: "VS Code", level: 95, icon: "💻" }
       ]
     }

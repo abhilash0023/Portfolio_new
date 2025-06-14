@@ -249,64 +249,6 @@ const EnhancedProjectsSection = () => {
             <ProjectCard3D key={project.title} project={project} index={index} />
           ))}
         </div>
-
-        {/* Featured Articles Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-20"
-        >
-          <h3 className="text-4xl font-bold text-center mb-12">
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Featured Articles
-            </span>
-          </h3>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Building Interactive 3D Experiences with Three.js",
-                excerpt: "A comprehensive guide to creating immersive web experiences using Three.js and WebGL...",
-                readTime: "8 min read",
-                date: "Dec 15, 2024"
-              },
-              {
-                title: "Optimizing React Performance in Large Applications",
-                excerpt: "Best practices and techniques for maintaining optimal performance in complex React applications...",
-                readTime: "12 min read",
-                date: "Dec 10, 2024"
-              },
-              {
-                title: "The Future of Web Development: WebAssembly & AI",
-                excerpt: "Exploring how WebAssembly and AI are shaping the next generation of web applications...",
-                readTime: "10 min read",
-                date: "Dec 5, 2024"
-              }
-            ].map((article, index) => (
-              <motion.div
-                key={article.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
-                className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-cyan-400/50 transition-all duration-300"
-              >
-                <div className="flex justify-between items-start mb-3">
-                  <span className="text-cyan-400 text-sm">{article.date}</span>
-                  <span className="text-gray-400 text-sm">{article.readTime}</span>
-                </div>
-                <h4 className="text-xl font-semibold text-white mb-3 hover:text-cyan-400 transition-colors">
-                  {article.title}
-                </h4>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  {article.excerpt}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );
