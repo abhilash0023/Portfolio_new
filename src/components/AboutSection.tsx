@@ -13,7 +13,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ isDark = false }) => {
       <div className={`absolute inset-0 ${
         isDark 
           ? 'bg-gradient-to-br from-black via-gray-900 to-gray-800' 
-          : 'bg-gradient-to-br from-white via-blue-50 to-gray-50'
+          : 'bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100'
       }`} />
       
       <div className="container mx-auto px-4 relative z-10">
@@ -25,9 +25,9 @@ const AboutSection: React.FC<AboutSectionProps> = ({ isDark = false }) => {
           className="text-center mb-16"
         >
           <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${
-            isDark ? 'text-white' : 'text-black'
+            isDark ? 'text-white' : 'text-gray-900'
           }`}>
-            About <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Me</span>
+            About <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Me</span>
           </h2>
         </motion.div>
 
@@ -52,9 +52,17 @@ const AboutSection: React.FC<AboutSectionProps> = ({ isDark = false }) => {
               }}
               className="relative w-48 h-48"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 opacity-40 blur-xl rounded-full" />
+              <div className={`absolute inset-0 ${
+                isDark 
+                  ? 'bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 opacity-40' 
+                  : 'bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 opacity-60'
+              } blur-xl rounded-full`} />
               <div 
-                className="absolute inset-4 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 opacity-60 rounded-full"
+                className={`absolute inset-4 ${
+                  isDark 
+                    ? 'bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 opacity-60' 
+                    : 'bg-gradient-to-r from-blue-500 via-indigo-600 to-purple-600 opacity-80'
+                } rounded-full`}
                 style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}
               />
             </motion.div>
@@ -71,14 +79,14 @@ const AboutSection: React.FC<AboutSectionProps> = ({ isDark = false }) => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className={`backdrop-blur-sm rounded-xl p-6 border ${
+              className={`backdrop-blur-sm rounded-xl p-6 border shadow-lg ${
                 isDark 
                   ? 'bg-gray-800/50 border-gray-700/50' 
-                  : 'bg-white/80 border-blue-200/50'
+                  : 'bg-white/90 border-blue-200/70 shadow-blue-100/50'
               }`}
             >
               <p className={`text-lg leading-relaxed font-medium ${
-                isDark ? 'text-gray-200' : 'text-gray-800'
+                isDark ? 'text-gray-200' : 'text-gray-700'
               }`}>
                 I'm a passionate full-stack developer with a love for creating innovative
                 web applications. With expertise in modern technologies like React, Node.js,
@@ -90,14 +98,14 @@ const AboutSection: React.FC<AboutSectionProps> = ({ isDark = false }) => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className={`backdrop-blur-sm rounded-xl p-6 border ${
+              className={`backdrop-blur-sm rounded-xl p-6 border shadow-lg ${
                 isDark 
                   ? 'bg-gray-800/50 border-gray-700/50' 
-                  : 'bg-white/80 border-blue-200/50'
+                  : 'bg-white/90 border-blue-200/70 shadow-blue-100/50'
               }`}
             >
               <p className={`text-lg leading-relaxed font-medium ${
-                isDark ? 'text-gray-200' : 'text-gray-800'
+                isDark ? 'text-gray-200' : 'text-gray-700'
               }`}>
                 My journey in software development spans over 5 years, during which I've
                 worked on diverse projects ranging from e-commerce platforms to AI-powered

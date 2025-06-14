@@ -45,13 +45,13 @@ const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = fals
       <div className={`absolute inset-0 ${
         isDark 
           ? 'bg-gradient-to-br from-black via-gray-900 to-gray-800' 
-          : 'bg-gradient-to-br from-white via-blue-50 to-gray-50'
+          : 'bg-gradient-to-br from-blue-50 via-white to-indigo-100'
       }`} />
       <motion.div
         className={`absolute inset-0 ${
           isDark 
             ? 'bg-gradient-to-r from-blue-900/30 via-transparent to-blue-800/30' 
-            : 'bg-gradient-to-r from-blue-100/30 via-transparent to-blue-200/30'
+            : 'bg-gradient-to-r from-blue-200/40 via-transparent to-indigo-200/40'
         }`}
         animate={{
           background: isDark ? [
@@ -59,9 +59,9 @@ const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = fals
             "linear-gradient(225deg, rgba(59, 130, 246, 0.2) 0%, transparent 50%, rgba(147, 197, 253, 0.2) 100%)",
             "linear-gradient(45deg, rgba(59, 130, 246, 0.2) 0%, transparent 50%, rgba(147, 197, 253, 0.2) 100%)"
           ] : [
-            "linear-gradient(45deg, rgba(59, 130, 246, 0.1) 0%, transparent 50%, rgba(147, 197, 253, 0.1) 100%)",
-            "linear-gradient(225deg, rgba(59, 130, 246, 0.1) 0%, transparent 50%, rgba(147, 197, 253, 0.1) 100%)",
-            "linear-gradient(45deg, rgba(59, 130, 246, 0.1) 0%, transparent 50%, rgba(147, 197, 253, 0.1) 100%)"
+            "linear-gradient(45deg, rgba(59, 130, 246, 0.3) 0%, transparent 50%, rgba(99, 102, 241, 0.3) 100%)",
+            "linear-gradient(225deg, rgba(59, 130, 246, 0.3) 0%, transparent 50%, rgba(99, 102, 241, 0.3) 100%)",
+            "linear-gradient(45deg, rgba(59, 130, 246, 0.3) 0%, transparent 50%, rgba(99, 102, 241, 0.3) 100%)"
           ]
         }}
         transition={{ duration: 8, repeat: Infinity }}
@@ -72,8 +72,10 @@ const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = fals
         {[...Array(15)].map((_, i) => (
           <motion.div
             key={i}
-            className={`absolute w-4 h-4 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full ${
-              isDark ? 'opacity-30' : 'opacity-20'
+            className={`absolute w-4 h-4 rounded-full ${
+              isDark 
+                ? 'bg-gradient-to-r from-blue-400 to-blue-600 opacity-30' 
+                : 'bg-gradient-to-r from-blue-500 to-indigo-600 opacity-40'
             }`}
             style={{
               left: `${Math.random() * 100}%`,
@@ -83,7 +85,7 @@ const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = fals
               y: [0, -150, 0],
               x: [0, Math.random() * 100 - 50, 0],
               scale: [1, 1.5, 1],
-              opacity: isDark ? [0.3, 0.7, 0.3] : [0.2, 0.6, 0.2],
+              opacity: isDark ? [0.3, 0.7, 0.3] : [0.4, 0.8, 0.4],
               rotateZ: [0, 360],
             }}
             transition={{
@@ -107,7 +109,9 @@ const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = fals
           <motion.div variants={textVariants} className="space-y-4">
             <motion.p
               variants={textVariants}
-              className="text-blue-600 font-medium tracking-wider uppercase text-sm"
+              className={`font-medium tracking-wider uppercase text-sm ${
+                isDark ? 'text-blue-400' : 'text-blue-600'
+              }`}
             >
               Welcome to my portfolio
             </motion.p>
@@ -119,11 +123,15 @@ const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = fals
               <span className={`block bg-gradient-to-r ${
                 isDark 
                   ? 'from-white via-gray-200 to-white' 
-                  : 'from-black via-gray-800 to-black'
+                  : 'from-gray-900 via-gray-700 to-gray-900'
               } bg-clip-text text-transparent`}>
                 Creative
               </span>
-              <span className="block bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 bg-clip-text text-transparent">
+              <span className={`block bg-gradient-to-r ${
+                isDark 
+                  ? 'from-blue-600 via-blue-500 to-blue-700' 
+                  : 'from-blue-600 via-indigo-600 to-purple-600'
+              } bg-clip-text text-transparent`}>
                 Developer
               </span>
             </motion.h1>
@@ -132,7 +140,7 @@ const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = fals
           <motion.p
             variants={textVariants}
             className={`text-xl lg:text-2xl leading-relaxed max-w-2xl ${
-              isDark ? 'text-gray-300' : 'text-gray-700'
+              isDark ? 'text-gray-300' : 'text-gray-600'
             }`}
           >
             Building exceptional digital solutions with modern technologies,
@@ -146,7 +154,11 @@ const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = fals
             <Button
               size="lg"
               onClick={() => scrollToSection('#projects')}
-              className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-blue-500/25"
+              className={`group px-8 py-4 rounded-lg text-lg font-semibold shadow-xl transition-all duration-300 transform hover:scale-105 ${
+                isDark 
+                  ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white hover:shadow-blue-500/25'
+                  : 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white hover:shadow-indigo-500/25'
+              }`}
             >
               <span className="flex items-center gap-3">
                 View My Work
@@ -158,7 +170,11 @@ const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = fals
               variant="outline"
               size="lg"
               onClick={() => scrollToSection('#contact')}
-              className="border-2 border-blue-500/50 text-blue-600 hover:bg-blue-50 hover:border-blue-500 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm"
+              className={`px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ${
+                isDark 
+                  ? 'border-2 border-blue-500/50 text-blue-400 hover:bg-blue-50/10 hover:border-blue-400'
+                  : 'border-2 border-blue-500/50 text-blue-600 hover:bg-blue-50 hover:border-blue-600'
+              }`}
             >
               <Mail className="w-5 h-5 mr-2" />
               Get In Touch
@@ -182,7 +198,7 @@ const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = fals
                 className={`group p-3 rounded-lg backdrop-blur-sm border transition-all duration-300 shadow-md ${
                   isDark 
                     ? 'bg-gray-800/50 border-gray-600 hover:bg-gray-700/60 hover:border-blue-500' 
-                    : 'bg-white/80 border-gray-200 hover:bg-blue-50 hover:border-blue-300'
+                    : 'bg-white/90 border-blue-200 hover:bg-blue-50 hover:border-blue-400 shadow-blue-100/50'
                 }`}
               >
                 <social.icon className={`w-6 h-6 transition-colors ${
@@ -220,11 +236,15 @@ const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = fals
             >
               {/* Multiple 3D layers */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 opacity-20 blur-xl rounded-2xl"
+                className={`absolute inset-0 blur-xl rounded-2xl ${
+                  isDark 
+                    ? 'bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 opacity-20'
+                    : 'bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 opacity-30'
+                }`}
                 style={{ transform: "translateZ(50px)" }}
                 animate={{
                   scale: [1, 1.2, 1],
-                  opacity: [0.2, 0.4, 0.2],
+                  opacity: isDark ? [0.2, 0.4, 0.2] : [0.3, 0.5, 0.3],
                 }}
                 transition={{
                   duration: 4,
@@ -233,11 +253,15 @@ const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = fals
                 }}
               />
               <motion.div
-                className="absolute inset-8 bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 opacity-25 blur-lg rounded-xl"
+                className={`absolute inset-8 blur-lg rounded-xl ${
+                  isDark 
+                    ? 'bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 opacity-25'
+                    : 'bg-gradient-to-r from-blue-500 via-indigo-400 to-purple-600 opacity-35'
+                }`}
                 style={{ transform: "translateZ(25px)" }}
                 animate={{
                   scale: [1.1, 1, 1.1],
-                  opacity: [0.25, 0.35, 0.25],
+                  opacity: isDark ? [0.25, 0.35, 0.25] : [0.35, 0.45, 0.35],
                 }}
                 transition={{
                   duration: 6,
@@ -246,11 +270,15 @@ const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = fals
                 }}
               />
               <motion.div
-                className="absolute inset-16 bg-gradient-to-r from-blue-600 to-blue-400 opacity-30 rounded-lg blur-md"
+                className={`absolute inset-16 rounded-lg blur-md ${
+                  isDark 
+                    ? 'bg-gradient-to-r from-blue-600 to-blue-400 opacity-30'
+                    : 'bg-gradient-to-r from-blue-600 to-indigo-500 opacity-40'
+                }`}
                 style={{ transform: "translateZ(0px)" }}
                 animate={{
                   scale: [1, 1.1, 1],
-                  opacity: [0.3, 0.5, 0.3],
+                  opacity: isDark ? [0.3, 0.5, 0.3] : [0.4, 0.6, 0.4],
                 }}
                 transition={{
                   duration: 8,
@@ -264,7 +292,11 @@ const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = fals
             {[...Array(6)].map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute w-3 h-3 bg-gradient-to-r from-black to-blue-600 rounded-full"
+                className={`absolute w-3 h-3 rounded-full ${
+                  isDark 
+                    ? 'bg-gradient-to-r from-blue-400 to-blue-600'
+                    : 'bg-gradient-to-r from-blue-500 to-indigo-600'
+                }`}
                 style={{
                   left: "50%",
                   top: "50%",
@@ -294,7 +326,7 @@ const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = fals
       >
         <div className="flex flex-col items-center space-y-2">
           <span className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Scroll Down</span>
-          <ChevronDown className="w-6 h-6 text-blue-600" />
+          <ChevronDown className={`w-6 h-6 ${isDark ? 'text-blue-400' : 'text-blue-600'}`} />
         </div>
       </motion.div>
     </section>

@@ -38,7 +38,7 @@ const Index = () => {
       className={`min-h-screen transition-all duration-500 relative overflow-x-hidden ${
         isDark 
           ? 'dark bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white' 
-          : 'bg-gradient-to-br from-white via-blue-50 to-gray-50 text-black'
+          : 'bg-gradient-to-br from-blue-50 via-white to-indigo-50 text-gray-900'
       }`}
     >
       {/* Enhanced Interactive Particles Background */}
