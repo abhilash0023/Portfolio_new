@@ -35,7 +35,11 @@ const Index = () => {
       exit="out"
       variants={pageVariants}
       transition={pageTransition}
-      className={`min-h-screen ${isDark ? 'dark bg-black' : 'bg-white'} transition-all duration-500 relative overflow-x-hidden`}
+      className={`min-h-screen transition-all duration-500 relative overflow-x-hidden ${
+        isDark 
+          ? 'dark bg-black text-white' 
+          : 'bg-white text-black'
+      }`}
     >
       {/* Enhanced Interactive Particles Background */}
       <ParticlesBackground isDark={isDark} />

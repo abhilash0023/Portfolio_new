@@ -33,30 +33,42 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ isDark }) => 
             },
             onHover: {
               enable: true,
-              mode: 'repulse',
+              mode: ['repulse', 'connect'],
             },
             resize: true,
           },
           modes: {
             push: {
-              quantity: 6,
+              quantity: 8,
             },
             repulse: {
-              distance: 150,
+              distance: 200,
               duration: 0.4,
+            },
+            connect: {
+              distance: 150,
+              links: {
+                opacity: 0.3,
+              },
             },
           },
         },
         particles: {
           color: {
-            value: isDark ? ['#3b82f6', '#60a5fa', '#93c5fd'] : ['#3b82f6', '#60a5fa', '#93c5fd'],
+            value: isDark 
+              ? ['#ffffff', '#93c5fd', '#60a5fa'] 
+              : ['#000000', '#1e40af', '#3b82f6'],
           },
           links: {
-            color: '#3b82f6',
-            distance: 150,
+            color: isDark ? '#3b82f6' : '#1e40af',
+            distance: 180,
             enable: true,
-            opacity: 0.3,
-            width: 1,
+            opacity: isDark ? 0.4 : 0.3,
+            width: 1.5,
+            triangles: {
+              enable: true,
+              opacity: 0.1,
+            },
           },
           move: {
             direction: 'none',
@@ -65,41 +77,69 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ isDark }) => 
               default: 'bounce',
             },
             random: true,
-            speed: 1.5,
+            speed: 2,
             straight: false,
+            path: {
+              enable: true,
+              delay: {
+                value: 0,
+              },
+              generator: 'perlinNoise',
+              options: {
+                columns: 6,
+                rows: 6,
+              },
+            },
           },
           number: {
             density: {
               enable: true,
               area: 800,
             },
-            value: 100,
+            value: 120,
           },
           opacity: {
-            value: 0.4,
+            value: isDark ? 0.5 : 0.4,
             random: true,
             animation: {
               enable: true,
-              speed: 1,
+              speed: 1.5,
               minimumValue: 0.1,
             },
           },
           shape: {
-            type: ['circle', 'triangle', 'polygon'],
+            type: ['circle', 'triangle', 'polygon', 'star'],
             options: {
               polygon: {
                 sides: 6,
               },
+              star: {
+                sides: 5,
+              },
             },
           },
           size: {
-            value: { min: 1, max: 4 },
+            value: { min: 1, max: 5 },
             random: true,
             animation: {
               enable: true,
-              speed: 2,
+              speed: 3,
               minimumValue: 0.5,
             },
+          },
+          rotate: {
+            value: { min: 0, max: 360 },
+            direction: 'random',
+            animation: {
+              enable: true,
+              speed: 5,
+            },
+          },
+          zIndex: {
+            value: { min: 0, max: 100 },
+            opacityRate: 0.5,
+            sizeRate: 1,
+            velocityRate: 1,
           },
         },
         detectRetina: true,

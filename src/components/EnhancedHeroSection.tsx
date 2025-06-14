@@ -37,7 +37,7 @@ const EnhancedHeroSection = () => {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Clean white to light blue gradient background */}
+      {/* Enhanced gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-slate-50 to-blue-50" />
       <motion.div
         className="absolute inset-0 bg-gradient-to-r from-blue-100/30 via-transparent to-blue-200/30"
@@ -50,6 +50,33 @@ const EnhancedHeroSection = () => {
         }}
         transition={{ duration: 8, repeat: Infinity }}
       />
+      
+      {/* Floating 3D elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(15)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-4 h-4 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full opacity-20"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -150, 0],
+              x: [0, Math.random() * 100 - 50, 0],
+              scale: [1, 1.5, 1],
+              opacity: [0.2, 0.6, 0.2],
+              rotateZ: [0, 360],
+            }}
+            transition={{
+              duration: 12 + Math.random() * 8,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
+      </div>
       
       <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
         {/* Text Content */}
@@ -136,51 +163,91 @@ const EnhancedHeroSection = () => {
           </motion.div>
         </motion.div>
 
-        {/* Professional Visual Elements */}
+        {/* Enhanced 3D Visual Elements */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="flex justify-center items-center h-96"
+          className="flex justify-center items-center h-96 relative"
         >
           <div className="relative">
-            {/* Clean geometric shapes with light blue theme */}
+            {/* Main 3D cube structure */}
             <motion.div
+              className="relative w-64 h-64"
+              style={{ transformStyle: "preserve-3d" }}
               animate={{
-                rotate: [0, 360],
-                scale: [1, 1.1, 1],
+                rotateX: [0, 10, 0],
+                rotateY: [0, 360],
+                rotateZ: [0, 5, 0],
               }}
               transition={{
-                duration: 12,
+                duration: 20,
                 repeat: Infinity,
                 ease: "linear"
               }}
-              className="w-64 h-64 rounded-2xl bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 opacity-20 blur-xl"
-            />
-            <motion.div
-              animate={{
-                rotate: [360, 0],
-                scale: [1.1, 1, 1.1],
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-              className="absolute inset-8 rounded-xl bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 opacity-25 blur-lg"
-            />
-            <motion.div
-              animate={{
-                rotate: [0, 180, 360],
-                scale: [1, 1.05, 1],
-              }}
-              transition={{
-                duration: 15,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-              className="absolute inset-16 bg-gradient-to-r from-blue-400 to-blue-600 opacity-30 rounded-lg blur-md"
-            />
+            >
+              {/* Multiple 3D layers */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 opacity-20 blur-xl rounded-2xl"
+                style={{ transform: "translateZ(50px)" }}
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.2, 0.4, 0.2],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              <motion.div
+                className="absolute inset-8 bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 opacity-25 blur-lg rounded-xl"
+                style={{ transform: "translateZ(25px)" }}
+                animate={{
+                  scale: [1.1, 1, 1.1],
+                  opacity: [0.25, 0.35, 0.25],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              <motion.div
+                className="absolute inset-16 bg-gradient-to-r from-blue-600 to-blue-400 opacity-30 rounded-lg blur-md"
+                style={{ transform: "translateZ(0px)" }}
+                animate={{
+                  scale: [1, 1.1, 1],
+                  opacity: [0.3, 0.5, 0.3],
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+            </motion.div>
+
+            {/* Orbiting elements */}
+            {[...Array(6)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-3 h-3 bg-gradient-to-r from-black to-blue-600 rounded-full"
+                style={{
+                  left: "50%",
+                  top: "50%",
+                  transformOrigin: `${80 + i * 20}px 0px`,
+                }}
+                animate={{
+                  rotate: [0, 360],
+                }}
+                transition={{
+                  duration: 10 + i * 2,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              />
+            ))}
           </div>
         </motion.div>
       </div>
