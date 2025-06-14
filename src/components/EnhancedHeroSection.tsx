@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ChevronDown, Download, Mail, Github, Linkedin, ArrowDown } from 'lucide-react';
+import { ChevronDown, Mail, Github, Linkedin, ArrowDown } from 'lucide-react';
 
 const EnhancedHeroSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -114,15 +114,14 @@ const EnhancedHeroSection = () => {
             </Button>
           </motion.div>
 
-          {/* Social Links */}
+          {/* Social Links - removed Download button */}
           <motion.div
             variants={textVariants}
             className="flex justify-center lg:justify-start space-x-6 pt-8"
           >
             {[
               { icon: Github, href: "#", label: "GitHub" },
-              { icon: Linkedin, href: "#", label: "LinkedIn" },
-              { icon: Download, href: "#", label: "Resume" }
+              { icon: Linkedin, href: "#", label: "LinkedIn" }
             ].map((social, index) => (
               <motion.a
                 key={social.label}
