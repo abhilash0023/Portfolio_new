@@ -146,7 +146,7 @@ const ProjectCard3D = ({ project, index, isDark }: { project: any; index: number
               variant="outline"
               className={`transition-colors ${
                 isDark 
-                  ? 'border-gray-600 text-gray-300 hover:bg-gray-700 hover:text-white'
+                  ? 'border-gray-600 text-gray-300 hover:bg-gray-700 hover:text-white hover:border-gray-500'
                   : 'border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-black'
               }`}
             >
@@ -176,7 +176,7 @@ const EnhancedProjectsSection: React.FC<EnhancedProjectsSectionProps> = ({ isDar
       title: 'AI-Powered E-Commerce Platform',
       description: 'A full-stack e-commerce solution with AI-driven product recommendations, real-time inventory management, and advanced analytics dashboard. Features include user authentication, payment processing, and personalized shopping experiences.',
       tech: ['React', 'Node.js', 'MongoDB', 'TensorFlow', 'Stripe', 'Socket.io'],
-      image: '/placeholder.svg',
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop',
       status: 'Live',
       stars: 245,
       forks: 67
@@ -185,7 +185,7 @@ const EnhancedProjectsSection: React.FC<EnhancedProjectsSectionProps> = ({ isDar
       title: 'Real-time Collaboration Platform',
       description: 'Modern team collaboration tool with real-time editing, video conferencing, file sharing, and project management features. Built with cutting-edge technologies for optimal performance.',
       tech: ['Next.js', 'TypeScript', 'WebRTC', 'PostgreSQL', 'Redis', 'AWS'],
-      image: '/placeholder.svg',
+      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop',
       status: 'Live',
       stars: 189,
       forks: 34
@@ -194,7 +194,7 @@ const EnhancedProjectsSection: React.FC<EnhancedProjectsSectionProps> = ({ isDar
       title: '3D Interactive Portfolio',
       description: 'Immersive 3D portfolio website showcasing creative projects with interactive elements, particle systems, and smooth animations. Features include dynamic lighting and responsive design.',
       tech: ['React', 'Three.js', 'Framer Motion', 'GSAP', 'WebGL'],
-      image: '/placeholder.svg',
+      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop',
       status: 'Development',
       stars: 156,
       forks: 29
@@ -203,7 +203,7 @@ const EnhancedProjectsSection: React.FC<EnhancedProjectsSectionProps> = ({ isDar
       title: 'Machine Learning Dashboard',
       description: 'Comprehensive ML dashboard for data visualization, model training, and performance monitoring. Includes real-time analytics, automated reporting, and collaborative features.',
       tech: ['Python', 'FastAPI', 'React', 'D3.js', 'TensorFlow', 'Docker'],
-      image: '/placeholder.svg',
+      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop',
       status: 'Live',
       stars: 312,
       forks: 89
@@ -212,7 +212,7 @@ const EnhancedProjectsSection: React.FC<EnhancedProjectsSectionProps> = ({ isDar
       title: 'Blockchain Voting System',
       description: 'Secure and transparent voting system built on blockchain technology. Features include voter verification, real-time results, and comprehensive audit trails.',
       tech: ['Solidity', 'Web3.js', 'React', 'Ethereum', 'IPFS', 'MetaMask'],
-      image: '/placeholder.svg',
+      image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&h=600&fit=crop',
       status: 'Development',
       stars: 278,
       forks: 45
@@ -221,7 +221,7 @@ const EnhancedProjectsSection: React.FC<EnhancedProjectsSectionProps> = ({ isDar
       title: 'IoT Smart Home Hub',
       description: 'Centralized smart home control system with device management, automation rules, energy monitoring, and mobile app integration for remote control.',
       tech: ['Vue.js', 'Node.js', 'MQTT', 'InfluxDB', 'Docker', 'Raspberry Pi'],
-      image: '/placeholder.svg',
+      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop',
       status: 'Live',
       stars: 198,
       forks: 52

@@ -58,7 +58,7 @@ const Index = () => {
           >
             <EnhancedHeroSection isDark={isDark} />
             <AboutSection isDark={isDark} />
-            <ProfessionalSkillsSection />
+            <ProfessionalSkillsSection isDark={isDark} />
             <EnhancedProjectsSection isDark={isDark} />
             <SocialLinks isDark={isDark} />
             <ContactSection isDark={isDark} />
