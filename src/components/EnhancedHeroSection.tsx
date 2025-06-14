@@ -72,7 +72,7 @@ const EnhancedHeroSection = () => {
               className="text-6xl lg:text-8xl font-bold leading-tight"
             >
               <span className="block bg-gradient-to-r from-white via-slate-200 to-white bg-clip-text text-transparent">
-                Professional
+                Creative
               </span>
               <span className="block bg-gradient-to-r from-indigo-400 via-violet-500 to-purple-600 bg-clip-text text-transparent">
                 Developer
@@ -114,7 +114,7 @@ const EnhancedHeroSection = () => {
             </Button>
           </motion.div>
 
-          {/* Social Links - removed Download button */}
+          {/* Social Links */}
           <motion.div
             variants={textVariants}
             className="flex justify-center lg:justify-start space-x-6 pt-8"
