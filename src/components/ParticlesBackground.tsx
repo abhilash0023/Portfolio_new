@@ -39,23 +39,23 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ isDark }) => 
           },
           modes: {
             push: {
-              quantity: 4,
+              quantity: 6,
             },
             repulse: {
-              distance: 200,
+              distance: 150,
               duration: 0.4,
             },
           },
         },
         particles: {
           color: {
-            value: isDark ? '#ffffff' : '#000000',
+            value: isDark ? ['#06b6d4', '#3b82f6', '#8b5cf6'] : ['#0ea5e9', '#6366f1', '#8b5cf6'],
           },
           links: {
-            color: isDark ? '#ffffff' : '#000000',
+            color: isDark ? '#06b6d4' : '#3b82f6',
             distance: 150,
             enable: true,
-            opacity: 0.2,
+            opacity: isDark ? 0.3 : 0.4,
             width: 1,
           },
           move: {
@@ -64,8 +64,8 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ isDark }) => 
             outModes: {
               default: 'bounce',
             },
-            random: false,
-            speed: 2,
+            random: true,
+            speed: 1.5,
             straight: false,
           },
           number: {
@@ -73,16 +73,33 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ isDark }) => 
               enable: true,
               area: 800,
             },
-            value: 80,
+            value: 100,
           },
           opacity: {
-            value: 0.3,
+            value: isDark ? 0.4 : 0.6,
+            random: true,
+            animation: {
+              enable: true,
+              speed: 1,
+              minimumValue: 0.1,
+            },
           },
           shape: {
-            type: 'circle',
+            type: ['circle', 'triangle', 'polygon'],
+            options: {
+              polygon: {
+                sides: 6,
+              },
+            },
           },
           size: {
-            value: { min: 1, max: 5 },
+            value: { min: 1, max: 4 },
+            random: true,
+            animation: {
+              enable: true,
+              speed: 2,
+              minimumValue: 0.5,
+            },
           },
         },
         detectRetina: true,

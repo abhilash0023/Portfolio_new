@@ -1,10 +1,10 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import HeroSection from '../components/HeroSection';
+import EnhancedHeroSection from '../components/EnhancedHeroSection';
 import AboutSection from '../components/AboutSection';
-import SkillsSection from '../components/SkillsSection';
-import ProjectsSection from '../components/ProjectsSection';
+import ProfessionalSkillsSection from '../components/ProfessionalSkillsSection';
+import EnhancedProjectsSection from '../components/EnhancedProjectsSection';
 import ContactSection from '../components/ContactSection';
 import SocialLinks from '../components/SocialLinks';
 import Navigation from '../components/Navigation';
@@ -16,9 +16,28 @@ const Index = () => {
   const [isDark, setIsDark] = useState(true);
   const { toast } = useToast();
 
+  const pageVariants = {
+    initial: { opacity: 0 },
+    in: { opacity: 1 },
+    out: { opacity: 0 }
+  };
+
+  const pageTransition = {
+    type: "tween",
+    ease: "anticipate",
+    duration: 0.8
+  };
+
   return (
-    <div className={`min-h-screen ${isDark ? 'dark bg-gray-900' : 'bg-gray-50'} transition-all duration-500 relative overflow-x-hidden`}>
-      {/* Interactive Particles Background */}
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      transition={pageTransition}
+      className={`min-h-screen ${isDark ? 'dark bg-gray-900' : 'bg-gray-50'} transition-all duration-500 relative overflow-x-hidden`}
+    >
+      {/* Enhanced Interactive Particles Background */}
       <ParticlesBackground isDark={isDark} />
       
       <div className="relative z-10">
@@ -27,21 +46,22 @@ const Index = () => {
         
         <AnimatePresence mode="wait">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            key="main-content"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
           >
-            <HeroSection />
+            <EnhancedHeroSection />
             <AboutSection />
-            <SkillsSection />
-            <ProjectsSection />
+            <ProfessionalSkillsSection />
+            <EnhancedProjectsSection />
             <SocialLinks isDark={isDark} />
             <ContactSection />
           </motion.div>
         </AnimatePresence>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
