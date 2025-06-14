@@ -38,7 +38,7 @@ const SkillsSection = () => {
   };
 
   return (
-    <section id="skills" className="py-20 bg-gradient-to-br from-gray-800 to-gray-900">
+    <section id="skills" className="py-20 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -48,11 +48,11 @@ const SkillsSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
               My Skills
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             Technologies and tools I work with to bring ideas to life
           </p>
         </motion.div>
@@ -66,11 +66,11 @@ const SkillsSection = () => {
         >
           {skills.map((skill, index) => (
             <motion.div key={skill.name} variants={itemVariants}>
-              <Card className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-all duration-300">
+              <Card className="bg-white/80 dark:bg-gray-800/50 border-gray-200 dark:border-gray-700 hover:bg-white/90 dark:hover:bg-gray-800/70 transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-semibold text-white">{skill.name}</h3>
-                    <span className="text-gray-300">{skill.level}%</span>
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{skill.name}</h3>
+                    <span className="text-gray-700 dark:text-gray-300">{skill.level}%</span>
                   </div>
                   <Progress 
                     value={skill.level} 

@@ -6,7 +6,7 @@ import DownloadResume from './DownloadResume';
 const AboutSection = () => {
   return (
     <section id="about" className="py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-indigo-900/20" />
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-100/50 via-blue-100/50 to-indigo-100/50 dark:from-purple-900/20 dark:via-blue-900/20 dark:to-indigo-900/20" />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -16,8 +16,8 @@ const AboutSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
-            About <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Me</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 drop-shadow-lg">
+            About <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Me</span>
           </h2>
         </motion.div>
 
@@ -29,7 +29,6 @@ const AboutSection = () => {
             viewport={{ once: true }}
             className="h-96 flex items-center justify-center"
           >
-            {/* Enhanced 3D-like animated shape */}
             <motion.div
               animate={{
                 scale: [1, 1.2, 1],
@@ -42,9 +41,9 @@ const AboutSection = () => {
               }}
               className="relative w-48 h-48"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 opacity-40 blur-xl rounded-full" />
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 opacity-60 dark:opacity-40 blur-xl rounded-full" />
               <div 
-                className="absolute inset-4 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 opacity-60 rounded-full"
+                className="absolute inset-4 bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-600 opacity-80 dark:opacity-60 rounded-full"
                 style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}
               />
             </motion.div>
@@ -61,9 +60,9 @@ const AboutSection = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-gray-700/30"
+              className="bg-white/80 dark:bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-gray-200/50 dark:border-gray-700/30"
             >
-              <p className="text-lg text-gray-200 leading-relaxed font-medium">
+              <p className="text-lg text-gray-800 dark:text-gray-200 leading-relaxed font-medium">
                 I'm a passionate full-stack developer with a love for creating innovative
                 web applications. With expertise in modern technologies like React, Node.js,
                 and cloud platforms, I bring ideas to life through clean, efficient code.
@@ -74,9 +73,9 @@ const AboutSection = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-gray-700/30"
+              className="bg-white/80 dark:bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-gray-200/50 dark:border-gray-700/30"
             >
-              <p className="text-lg text-gray-200 leading-relaxed font-medium">
+              <p className="text-lg text-gray-800 dark:text-gray-200 leading-relaxed font-medium">
                 My journey in software development spans over 5 years, during which I've
                 worked on diverse projects ranging from e-commerce platforms to AI-powered
                 applications. I'm always eager to learn new technologies and tackle

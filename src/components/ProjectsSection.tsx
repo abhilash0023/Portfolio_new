@@ -11,10 +11,9 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
       transition={{ duration: 0.8, delay: index * 0.2 }}
       viewport={{ once: true }}
       whileHover={{ y: -10 }}
-      className="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700/50 group"
+      className="bg-white/80 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 group"
     >
       <div className="h-48 relative overflow-hidden flex items-center justify-center" style={{ backgroundColor: project.color }}>
-        {/* Animated geometric shape instead of 3D object */}
         <motion.div
           animate={{
             rotate: [0, 360],
@@ -32,14 +31,14 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
       </div>
       
       <div className="p-6">
-        <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
-        <p className="text-gray-300 mb-4 line-clamp-3">{project.description}</p>
+        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{project.title}</h3>
+        <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3">{project.description}</p>
         
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tech.map((tech: string) => (
             <span
               key={tech}
-              className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm"
+              className="px-3 py-1 bg-purple-100 dark:bg-purple-500/20 text-purple-700 dark:text-purple-300 rounded-full text-sm"
             >
               {tech}
             </span>
@@ -50,14 +49,14 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
           <Button
             variant="outline"
             size="sm"
-            className="border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white"
+            className="border-purple-500 text-purple-600 dark:text-purple-400 hover:bg-purple-500 hover:text-white"
           >
             View Demo
           </Button>
           <Button
             variant="outline"
             size="sm"
-            className="border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white"
+            className="border-blue-500 text-blue-600 dark:text-blue-400 hover:bg-blue-500 hover:text-white"
           >
             View Code
           </Button>
@@ -97,7 +96,7 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-indigo-900/10 to-purple-900/10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-indigo-50/50 to-purple-50/50 dark:from-blue-900/10 dark:via-indigo-900/10 dark:to-purple-900/10" />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -107,10 +106,10 @@ const ProjectsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Featured <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">Projects</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            Featured <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">Projects</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             A showcase of my recent work and creative solutions
           </p>
         </motion.div>
