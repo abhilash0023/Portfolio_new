@@ -37,35 +37,50 @@ const AboutSection: React.FC<AboutSectionProps> = ({ isDark = false }) => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="h-96 flex items-center justify-center"
+            className="flex justify-center"
           >
-            {/* Enhanced 3D-like animated shape */}
-            <motion.div
-              animate={{
-                scale: [1, 1.2, 1],
-                rotate: [0, 90, 180, 270, 360],
-              }}
-              transition={{
-                duration: 12,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-              className="relative w-48 h-48"
-            >
-              <div className={`absolute inset-0 ${
-                isDark 
-                  ? 'bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 opacity-40' 
-                  : 'bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 opacity-60'
-              } blur-xl rounded-full`} />
-              <div 
-                className={`absolute inset-4 ${
+            <div className="relative">
+              <motion.div
+                className={`absolute inset-0 rounded-2xl blur-xl ${
                   isDark 
-                    ? 'bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 opacity-60' 
-                    : 'bg-gradient-to-r from-blue-500 via-indigo-600 to-purple-600 opacity-80'
-                } rounded-full`}
-                style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}
+                    ? 'bg-gradient-to-r from-blue-400/20 via-blue-500/20 to-blue-600/20'
+                    : 'bg-gradient-to-r from-blue-400/30 via-indigo-500/30 to-purple-500/30'
+                }`}
+                animate={{
+                  scale: [1, 1.1, 1],
+                  opacity: isDark ? [0.2, 0.3, 0.2] : [0.3, 0.4, 0.3],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
               />
-            </motion.div>
+              <motion.img
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=500&fit=crop&crop=face"
+                alt="Developer at work"
+                className={`relative w-80 h-96 object-cover rounded-2xl border-4 shadow-2xl ${
+                  isDark 
+                    ? 'border-gray-700 shadow-blue-900/50'
+                    : 'border-white shadow-blue-200/50'
+                }`}
+                whileHover={{ scale: 1.02, rotate: 1 }}
+                transition={{ duration: 0.3 }}
+              />
+              <motion.div
+                className={`absolute -inset-2 rounded-2xl border-2 ${
+                  isDark ? 'border-blue-500/20' : 'border-blue-400/30'
+                }`}
+                animate={{
+                  rotate: [0, 360],
+                }}
+                transition={{
+                  duration: 20,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              />
+            </div>
           </motion.div>
 
           <motion.div

@@ -211,107 +211,55 @@ const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = fals
           </motion.div>
         </motion.div>
 
-        {/* Enhanced 3D Visual Elements */}
+        {/* Developer Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="flex justify-center items-center h-96 relative"
+          className="flex justify-center items-center relative"
         >
           <div className="relative">
-            {/* Main 3D cube structure */}
             <motion.div
-              className="relative w-64 h-64"
-              style={{ transformStyle: "preserve-3d" }}
+              className={`absolute inset-0 rounded-full blur-2xl ${
+                isDark 
+                  ? 'bg-gradient-to-r from-blue-400/20 via-blue-500/20 to-blue-600/20'
+                  : 'bg-gradient-to-r from-blue-400/30 via-indigo-500/30 to-purple-500/30'
+              }`}
               animate={{
-                rotateX: [0, 10, 0],
-                rotateY: [0, 360],
-                rotateZ: [0, 5, 0],
+                scale: [1, 1.2, 1],
+                opacity: isDark ? [0.2, 0.4, 0.2] : [0.3, 0.5, 0.3],
               }}
               transition={{
-                duration: 20,
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.img
+              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=500&fit=crop&crop=face"
+              alt="Developer working"
+              className={`relative w-80 h-80 object-cover rounded-full border-4 shadow-2xl ${
+                isDark 
+                  ? 'border-gray-700 shadow-blue-900/50'
+                  : 'border-white shadow-blue-200/50'
+              }`}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            />
+            <motion.div
+              className={`absolute -inset-4 rounded-full border-2 ${
+                isDark ? 'border-blue-500/30' : 'border-blue-400/40'
+              }`}
+              animate={{
+                rotate: [0, 360],
+                scale: [1, 1.1, 1],
+              }}
+              transition={{
+                duration: 15,
                 repeat: Infinity,
                 ease: "linear"
               }}
-            >
-              {/* Multiple 3D layers */}
-              <motion.div
-                className={`absolute inset-0 blur-xl rounded-2xl ${
-                  isDark 
-                    ? 'bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 opacity-20'
-                    : 'bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 opacity-30'
-                }`}
-                style={{ transform: "translateZ(50px)" }}
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: isDark ? [0.2, 0.4, 0.2] : [0.3, 0.5, 0.3],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-              <motion.div
-                className={`absolute inset-8 blur-lg rounded-xl ${
-                  isDark 
-                    ? 'bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 opacity-25'
-                    : 'bg-gradient-to-r from-blue-500 via-indigo-400 to-purple-600 opacity-35'
-                }`}
-                style={{ transform: "translateZ(25px)" }}
-                animate={{
-                  scale: [1.1, 1, 1.1],
-                  opacity: isDark ? [0.25, 0.35, 0.25] : [0.35, 0.45, 0.35],
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-              <motion.div
-                className={`absolute inset-16 rounded-lg blur-md ${
-                  isDark 
-                    ? 'bg-gradient-to-r from-blue-600 to-blue-400 opacity-30'
-                    : 'bg-gradient-to-r from-blue-600 to-indigo-500 opacity-40'
-                }`}
-                style={{ transform: "translateZ(0px)" }}
-                animate={{
-                  scale: [1, 1.1, 1],
-                  opacity: isDark ? [0.3, 0.5, 0.3] : [0.4, 0.6, 0.4],
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-            </motion.div>
-
-            {/* Orbiting elements */}
-            {[...Array(6)].map((_, i) => (
-              <motion.div
-                key={i}
-                className={`absolute w-3 h-3 rounded-full ${
-                  isDark 
-                    ? 'bg-gradient-to-r from-blue-400 to-blue-600'
-                    : 'bg-gradient-to-r from-blue-500 to-indigo-600'
-                }`}
-                style={{
-                  left: "50%",
-                  top: "50%",
-                  transformOrigin: `${80 + i * 20}px 0px`,
-                }}
-                animate={{
-                  rotate: [0, 360],
-                }}
-                transition={{
-                  duration: 10 + i * 2,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-              />
-            ))}
+            />
           </div>
         </motion.div>
       </div>
