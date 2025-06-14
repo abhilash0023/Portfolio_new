@@ -4,7 +4,11 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, Mail, Github, Linkedin, ArrowDown } from 'lucide-react';
 
-const EnhancedHeroSection = () => {
+interface EnhancedHeroSectionProps {
+  isDark?: boolean;
+}
+
+const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = false }) => {
   const scrollToSection = (sectionId: string) => {
     const element = document.querySelector(sectionId);
     if (element) {
@@ -38,11 +42,23 @@ const EnhancedHeroSection = () => {
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Enhanced gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-slate-50 to-blue-50" />
+      <div className={`absolute inset-0 ${
+        isDark 
+          ? 'bg-gradient-to-br from-black via-gray-900 to-gray-800' 
+          : 'bg-gradient-to-br from-white via-blue-50 to-gray-50'
+      }`} />
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-blue-100/30 via-transparent to-blue-200/30"
+        className={`absolute inset-0 ${
+          isDark 
+            ? 'bg-gradient-to-r from-blue-900/30 via-transparent to-blue-800/30' 
+            : 'bg-gradient-to-r from-blue-100/30 via-transparent to-blue-200/30'
+        }`}
         animate={{
-          background: [
+          background: isDark ? [
+            "linear-gradient(45deg, rgba(59, 130, 246, 0.2) 0%, transparent 50%, rgba(147, 197, 253, 0.2) 100%)",
+            "linear-gradient(225deg, rgba(59, 130, 246, 0.2) 0%, transparent 50%, rgba(147, 197, 253, 0.2) 100%)",
+            "linear-gradient(45deg, rgba(59, 130, 246, 0.2) 0%, transparent 50%, rgba(147, 197, 253, 0.2) 100%)"
+          ] : [
             "linear-gradient(45deg, rgba(59, 130, 246, 0.1) 0%, transparent 50%, rgba(147, 197, 253, 0.1) 100%)",
             "linear-gradient(225deg, rgba(59, 130, 246, 0.1) 0%, transparent 50%, rgba(147, 197, 253, 0.1) 100%)",
             "linear-gradient(45deg, rgba(59, 130, 246, 0.1) 0%, transparent 50%, rgba(147, 197, 253, 0.1) 100%)"
@@ -56,7 +72,9 @@ const EnhancedHeroSection = () => {
         {[...Array(15)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-4 h-4 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full opacity-20"
+            className={`absolute w-4 h-4 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full ${
+              isDark ? 'opacity-30' : 'opacity-20'
+            }`}
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -65,7 +83,7 @@ const EnhancedHeroSection = () => {
               y: [0, -150, 0],
               x: [0, Math.random() * 100 - 50, 0],
               scale: [1, 1.5, 1],
-              opacity: [0.2, 0.6, 0.2],
+              opacity: isDark ? [0.3, 0.7, 0.3] : [0.2, 0.6, 0.2],
               rotateZ: [0, 360],
             }}
             transition={{
@@ -98,7 +116,11 @@ const EnhancedHeroSection = () => {
               variants={textVariants}
               className="text-6xl lg:text-8xl font-bold leading-tight"
             >
-              <span className="block bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent">
+              <span className={`block bg-gradient-to-r ${
+                isDark 
+                  ? 'from-white via-gray-200 to-white' 
+                  : 'from-black via-gray-800 to-black'
+              } bg-clip-text text-transparent`}>
                 Creative
               </span>
               <span className="block bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 bg-clip-text text-transparent">
@@ -109,7 +131,9 @@ const EnhancedHeroSection = () => {
           
           <motion.p
             variants={textVariants}
-            className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl"
+            className={`text-xl lg:text-2xl leading-relaxed max-w-2xl ${
+              isDark ? 'text-gray-300' : 'text-gray-700'
+            }`}
           >
             Building exceptional digital solutions with modern technologies,
             clean architecture, and user-focused design principles.
@@ -155,9 +179,17 @@ const EnhancedHeroSection = () => {
                 href={social.href}
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
-                className="group p-3 rounded-lg bg-white/80 backdrop-blur-sm border border-gray-200 hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 shadow-md"
+                className={`group p-3 rounded-lg backdrop-blur-sm border transition-all duration-300 shadow-md ${
+                  isDark 
+                    ? 'bg-gray-800/50 border-gray-600 hover:bg-gray-700/60 hover:border-blue-500' 
+                    : 'bg-white/80 border-gray-200 hover:bg-blue-50 hover:border-blue-300'
+                }`}
               >
-                <social.icon className="w-6 h-6 text-gray-600 group-hover:text-blue-600 transition-colors" />
+                <social.icon className={`w-6 h-6 transition-colors ${
+                  isDark 
+                    ? 'text-gray-300 group-hover:text-blue-400' 
+                    : 'text-gray-600 group-hover:text-blue-600'
+                }`} />
               </motion.a>
             ))}
           </motion.div>
@@ -261,7 +293,7 @@ const EnhancedHeroSection = () => {
         onClick={() => scrollToSection('#about')}
       >
         <div className="flex flex-col items-center space-y-2">
-          <span className="text-gray-600 text-sm">Scroll Down</span>
+          <span className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Scroll Down</span>
           <ChevronDown className="w-6 h-6 text-blue-600" />
         </div>
       </motion.div>

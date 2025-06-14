@@ -3,10 +3,18 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import DownloadResume from './DownloadResume';
 
-const AboutSection = () => {
+interface AboutSectionProps {
+  isDark?: boolean;
+}
+
+const AboutSection: React.FC<AboutSectionProps> = ({ isDark = false }) => {
   return (
     <section id="about" className="py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-indigo-900/20" />
+      <div className={`absolute inset-0 ${
+        isDark 
+          ? 'bg-gradient-to-br from-black via-gray-900 to-gray-800' 
+          : 'bg-gradient-to-br from-white via-blue-50 to-gray-50'
+      }`} />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -16,8 +24,10 @@ const AboutSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
-            About <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Me</span>
+          <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${
+            isDark ? 'text-white' : 'text-black'
+          }`}>
+            About <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Me</span>
           </h2>
         </motion.div>
 
@@ -42,9 +52,9 @@ const AboutSection = () => {
               }}
               className="relative w-48 h-48"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 opacity-40 blur-xl rounded-full" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 opacity-40 blur-xl rounded-full" />
               <div 
-                className="absolute inset-4 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 opacity-60 rounded-full"
+                className="absolute inset-4 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 opacity-60 rounded-full"
                 style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}
               />
             </motion.div>
@@ -61,9 +71,15 @@ const AboutSection = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-gray-700/30"
+              className={`backdrop-blur-sm rounded-xl p-6 border ${
+                isDark 
+                  ? 'bg-gray-800/50 border-gray-700/50' 
+                  : 'bg-white/80 border-blue-200/50'
+              }`}
             >
-              <p className="text-lg text-gray-200 leading-relaxed font-medium">
+              <p className={`text-lg leading-relaxed font-medium ${
+                isDark ? 'text-gray-200' : 'text-gray-800'
+              }`}>
                 I'm a passionate full-stack developer with a love for creating innovative
                 web applications. With expertise in modern technologies like React, Node.js,
                 and cloud platforms, I bring ideas to life through clean, efficient code.
@@ -74,9 +90,15 @@ const AboutSection = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-gray-700/30"
+              className={`backdrop-blur-sm rounded-xl p-6 border ${
+                isDark 
+                  ? 'bg-gray-800/50 border-gray-700/50' 
+                  : 'bg-white/80 border-blue-200/50'
+              }`}
             >
-              <p className="text-lg text-gray-200 leading-relaxed font-medium">
+              <p className={`text-lg leading-relaxed font-medium ${
+                isDark ? 'text-gray-200' : 'text-gray-800'
+              }`}>
                 My journey in software development spans over 5 years, during which I've
                 worked on diverse projects ranging from e-commerce platforms to AI-powered
                 applications. I'm always eager to learn new technologies and tackle

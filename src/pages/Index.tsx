@@ -37,8 +37,8 @@ const Index = () => {
       transition={pageTransition}
       className={`min-h-screen transition-all duration-500 relative overflow-x-hidden ${
         isDark 
-          ? 'dark bg-black text-white' 
-          : 'bg-white text-black'
+          ? 'dark bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white' 
+          : 'bg-gradient-to-br from-white via-blue-50 to-gray-50 text-black'
       }`}
     >
       {/* Enhanced Interactive Particles Background */}
@@ -56,10 +56,10 @@ const Index = () => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
           >
-            <EnhancedHeroSection />
-            <AboutSection />
-            <ProfessionalSkillsSection />
-            <EnhancedProjectsSection />
+            <EnhancedHeroSection isDark={isDark} />
+            <AboutSection isDark={isDark} />
+            <ProfessionalSkillsSection isDark={isDark} />
+            <EnhancedProjectsSection isDark={isDark} />
             <SocialLinks isDark={isDark} />
             <ContactSection isDark={isDark} />
           </motion.div>
