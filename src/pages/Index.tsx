@@ -45,7 +45,7 @@ const Index = () => {
       <ParticlesBackground isDark={isDark} />
       
       <div className="relative z-10">
-        <Navigation />
+        <Navigation isDark={isDark} />
         <ThemeToggle isDark={isDark} setIsDark={setIsDark} />
         
         <AnimatePresence mode="wait">
@@ -58,9 +58,9 @@ const Index = () => {
           >
             <EnhancedHeroSection isDark={isDark} />
             <AboutSection isDark={isDark} />
-            <ProfessionalSkillsSection isDark={isDark} />
-            <EnhancedProjectsSection isDark={isDark} />
-            <SocialLinks />
+            <ProfessionalSkillsSection />
+            <EnhancedProjectsSection />
+            <SocialLinks isDark={isDark} />
             <ContactSection isDark={isDark} />
           </motion.div>
         </AnimatePresence>
