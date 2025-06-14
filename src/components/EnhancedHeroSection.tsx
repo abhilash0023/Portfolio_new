@@ -37,15 +37,15 @@ const EnhancedHeroSection = () => {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900/30 to-purple-900/30" />
+      {/* Professional gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-pink-500/10"
+        className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-transparent to-violet-500/10"
         animate={{
           background: [
-            "linear-gradient(45deg, rgba(6, 182, 212, 0.1) 0%, transparent 50%, rgba(236, 72, 153, 0.1) 100%)",
-            "linear-gradient(225deg, rgba(6, 182, 212, 0.1) 0%, transparent 50%, rgba(236, 72, 153, 0.1) 100%)",
-            "linear-gradient(45deg, rgba(6, 182, 212, 0.1) 0%, transparent 50%, rgba(236, 72, 153, 0.1) 100%)"
+            "linear-gradient(45deg, rgba(99, 102, 241, 0.1) 0%, transparent 50%, rgba(139, 92, 246, 0.1) 100%)",
+            "linear-gradient(225deg, rgba(99, 102, 241, 0.1) 0%, transparent 50%, rgba(139, 92, 246, 0.1) 100%)",
+            "linear-gradient(45deg, rgba(99, 102, 241, 0.1) 0%, transparent 50%, rgba(139, 92, 246, 0.1) 100%)"
           ]
         }}
         transition={{ duration: 8, repeat: Infinity }}
@@ -62,7 +62,7 @@ const EnhancedHeroSection = () => {
           <motion.div variants={textVariants} className="space-y-4">
             <motion.p
               variants={textVariants}
-              className="text-cyan-400 font-medium tracking-wider uppercase text-sm"
+              className="text-indigo-400 font-medium tracking-wider uppercase text-sm"
             >
               Welcome to my portfolio
             </motion.p>
@@ -71,10 +71,10 @@ const EnhancedHeroSection = () => {
               variants={textVariants}
               className="text-6xl lg:text-8xl font-bold leading-tight"
             >
-              <span className="block bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent">
-                Creative
+              <span className="block bg-gradient-to-r from-white via-slate-200 to-white bg-clip-text text-transparent">
+                Professional
               </span>
-              <span className="block bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-indigo-400 via-violet-500 to-purple-600 bg-clip-text text-transparent">
                 Developer
               </span>
             </motion.h1>
@@ -82,10 +82,10 @@ const EnhancedHeroSection = () => {
           
           <motion.p
             variants={textVariants}
-            className="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl"
+            className="text-xl lg:text-2xl text-slate-300 leading-relaxed max-w-2xl"
           >
-            Crafting exceptional digital experiences with cutting-edge technologies,
-            innovative design, and immersive 3D interactions.
+            Building exceptional digital solutions with modern technologies,
+            clean architecture, and user-focused design principles.
           </motion.p>
           
           <motion.div
@@ -95,7 +95,7 @@ const EnhancedHeroSection = () => {
             <Button
               size="lg"
               onClick={() => scrollToSection('#projects')}
-              className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-cyan-500/25"
+              className="group bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-indigo-500/25"
             >
               <span className="flex items-center gap-3">
                 View My Work
@@ -107,7 +107,7 @@ const EnhancedHeroSection = () => {
               variant="outline"
               size="lg"
               onClick={() => scrollToSection('#contact')}
-              className="border-2 border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 backdrop-blur-sm"
+              className="border-2 border-indigo-500/50 text-indigo-400 hover:bg-indigo-500/10 hover:border-indigo-400 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm"
             >
               <Mail className="w-5 h-5 mr-2" />
               Get In Touch
@@ -129,15 +129,15 @@ const EnhancedHeroSection = () => {
                 href={social.href}
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
-                className="group p-3 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-cyan-500/20 hover:border-cyan-400/50 transition-all duration-300"
+                className="group p-3 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-indigo-500/20 hover:border-indigo-400/50 transition-all duration-300"
               >
-                <social.icon className="w-6 h-6 text-gray-400 group-hover:text-cyan-400 transition-colors" />
+                <social.icon className="w-6 h-6 text-slate-400 group-hover:text-indigo-400 transition-colors" />
               </motion.a>
             ))}
           </motion.div>
         </motion.div>
 
-        {/* 3D Visual - Simplified to avoid runtime errors */}
+        {/* Professional Visual Elements */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -145,42 +145,42 @@ const EnhancedHeroSection = () => {
           className="flex justify-center items-center h-96"
         >
           <div className="relative">
-            {/* Animated geometric shapes instead of 3D for now */}
+            {/* Professional animated geometric shapes */}
             <motion.div
               animate={{
                 rotate: [0, 360],
-                scale: [1, 1.2, 1],
+                scale: [1, 1.1, 1],
+              }}
+              transition={{
+                duration: 12,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              className="w-64 h-64 rounded-2xl bg-gradient-to-r from-indigo-500 via-violet-500 to-purple-600 opacity-20 blur-xl"
+            />
+            <motion.div
+              animate={{
+                rotate: [360, 0],
+                scale: [1.1, 1, 1.1],
               }}
               transition={{
                 duration: 8,
                 repeat: Infinity,
                 ease: "linear"
               }}
-              className="w-64 h-64 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 opacity-20 blur-xl"
-            />
-            <motion.div
-              animate={{
-                rotate: [360, 0],
-                scale: [1.2, 1, 1.2],
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-              className="absolute inset-8 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 opacity-30 blur-lg"
+              className="absolute inset-8 rounded-xl bg-gradient-to-r from-violet-500 via-purple-500 to-indigo-500 opacity-25 blur-lg"
             />
             <motion.div
               animate={{
                 rotate: [0, 180, 360],
-                scale: [1, 1.1, 1],
+                scale: [1, 1.05, 1],
               }}
               transition={{
-                duration: 10,
+                duration: 15,
                 repeat: Infinity,
                 ease: "linear"
               }}
-              className="absolute inset-16 bg-gradient-to-r from-cyan-400 to-blue-600 opacity-40 rounded-full blur-md"
+              className="absolute inset-16 bg-gradient-to-r from-indigo-400 to-violet-600 opacity-30 rounded-lg blur-md"
             />
           </div>
         </motion.div>
@@ -195,8 +195,8 @@ const EnhancedHeroSection = () => {
         onClick={() => scrollToSection('#about')}
       >
         <div className="flex flex-col items-center space-y-2">
-          <span className="text-gray-400 text-sm">Scroll Down</span>
-          <ChevronDown className="w-6 h-6 text-cyan-400" />
+          <span className="text-slate-400 text-sm">Scroll Down</span>
+          <ChevronDown className="w-6 h-6 text-indigo-400" />
         </div>
       </motion.div>
     </section>
