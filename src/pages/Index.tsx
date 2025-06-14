@@ -37,7 +37,7 @@ const Index = () => {
       transition={pageTransition}
       className={`min-h-screen transition-all duration-500 relative overflow-x-hidden ${
         isDark 
-          ? 'dark bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white' 
+          ? 'dark bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white' 
           : 'bg-gradient-to-br from-white via-blue-50 to-gray-50 text-black'
       }`}
     >
@@ -45,7 +45,7 @@ const Index = () => {
       <ParticlesBackground isDark={isDark} />
       
       <div className="relative z-10">
-        <Navigation isDark={isDark} />
+        <Navigation />
         <ThemeToggle isDark={isDark} setIsDark={setIsDark} />
         
         <AnimatePresence mode="wait">
@@ -60,7 +60,7 @@ const Index = () => {
             <AboutSection isDark={isDark} />
             <ProfessionalSkillsSection isDark={isDark} />
             <EnhancedProjectsSection isDark={isDark} />
-            <SocialLinks isDark={isDark} />
+            <SocialLinks />
             <ContactSection isDark={isDark} />
           </motion.div>
         </AnimatePresence>
