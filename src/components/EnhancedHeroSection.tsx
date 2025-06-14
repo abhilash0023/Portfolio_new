@@ -3,7 +3,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, Download, Mail, Github, Linkedin, ArrowDown } from 'lucide-react';
-import Hero3D from './Hero3D';
 
 const EnhancedHeroSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -20,7 +19,7 @@ const EnhancedHeroSection = () => {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     }
   };
@@ -138,14 +137,52 @@ const EnhancedHeroSection = () => {
           </motion.div>
         </motion.div>
 
-        {/* 3D Visual */}
+        {/* 3D Visual - Simplified to avoid runtime errors */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="flex justify-center items-center"
+          className="flex justify-center items-center h-96"
         >
-          <Hero3D />
+          <div className="relative">
+            {/* Animated geometric shapes instead of 3D for now */}
+            <motion.div
+              animate={{
+                rotate: [0, 360],
+                scale: [1, 1.2, 1],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              className="w-64 h-64 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 opacity-20 blur-xl"
+            />
+            <motion.div
+              animate={{
+                rotate: [360, 0],
+                scale: [1.2, 1, 1.2],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              className="absolute inset-8 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 opacity-30 blur-lg"
+            />
+            <motion.div
+              animate={{
+                rotate: [0, 180, 360],
+                scale: [1, 1.1, 1],
+              }}
+              transition={{
+                duration: 10,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              className="absolute inset-16 bg-gradient-to-r from-cyan-400 to-blue-600 opacity-40 rounded-full blur-md"
+            />
+          </div>
         </motion.div>
       </div>
 

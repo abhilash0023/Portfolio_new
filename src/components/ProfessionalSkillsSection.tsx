@@ -58,7 +58,7 @@ const ProfessionalSkillsSection = () => {
       x: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 12
       }
@@ -71,7 +71,7 @@ const ProfessionalSkillsSection = () => {
       width: `${level}%`,
       transition: {
         duration: 1.5,
-        ease: "easeInOut",
+        ease: "easeInOut" as const,
         delay: 0.5
       }
     })
