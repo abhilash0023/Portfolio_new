@@ -13,7 +13,7 @@ import ParticlesBackground from '../components/ParticlesBackground';
 import { useToast } from '@/hooks/use-toast';
 
 const Index = () => {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
   const { toast } = useToast();
 
   const pageVariants = {
@@ -35,7 +35,7 @@ const Index = () => {
       exit="out"
       variants={pageVariants}
       transition={pageTransition}
-      className={`min-h-screen ${isDark ? 'dark bg-slate-900' : 'bg-slate-50'} transition-all duration-500 relative overflow-x-hidden`}
+      className={`min-h-screen ${isDark ? 'dark bg-slate-900' : 'bg-white'} transition-all duration-500 relative overflow-x-hidden`}
     >
       {/* Enhanced Interactive Particles Background */}
       <ParticlesBackground isDark={isDark} />

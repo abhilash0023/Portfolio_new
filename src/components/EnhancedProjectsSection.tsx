@@ -19,7 +19,7 @@ const ProjectCard3D = ({ project, index }: { project: any; index: number }) => {
       className="group perspective-1000"
       style={{ transformStyle: "preserve-3d" }}
     >
-      <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 group-hover:border-cyan-400/50 transition-all duration-500 transform-gpu">
+      <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200 group-hover:border-blue-300 transition-all duration-500 transform-gpu shadow-lg hover:shadow-blue-500/25">
         {/* Project Image */}
         <div className="relative h-64 overflow-hidden">
           <motion.img
@@ -29,7 +29,7 @@ const ProjectCard3D = ({ project, index }: { project: any; index: number }) => {
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.5 }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
           
           {/* Status Badge */}
           <motion.div
@@ -37,8 +37,8 @@ const ProjectCard3D = ({ project, index }: { project: any; index: number }) => {
             animate={{ opacity: 1, x: 0 }}
             className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold ${
               project.status === 'Live' 
-                ? 'bg-green-500/20 text-green-400 border border-green-500/30' 
-                : 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+                ? 'bg-green-100 text-green-700 border border-green-200' 
+                : 'bg-blue-100 text-blue-700 border border-blue-200'
             } backdrop-blur-sm`}
           >
             {project.status}
@@ -47,13 +47,13 @@ const ProjectCard3D = ({ project, index }: { project: any; index: number }) => {
           {/* Project Stats */}
           <div className="absolute top-4 left-4 flex space-x-2">
             {project.stars && (
-              <div className="flex items-center space-x-1 bg-black/20 backdrop-blur-sm rounded-full px-2 py-1">
+              <div className="flex items-center space-x-1 bg-white/20 backdrop-blur-sm rounded-full px-2 py-1">
                 <Star className="w-3 h-3 text-yellow-400" />
                 <span className="text-xs text-white">{project.stars}</span>
               </div>
             )}
             {project.forks && (
-              <div className="flex items-center space-x-1 bg-black/20 backdrop-blur-sm rounded-full px-2 py-1">
+              <div className="flex items-center space-x-1 bg-white/20 backdrop-blur-sm rounded-full px-2 py-1">
                 <GitFork className="w-3 h-3 text-gray-300" />
                 <span className="text-xs text-white">{project.forks}</span>
               </div>
@@ -64,12 +64,12 @@ const ProjectCard3D = ({ project, index }: { project: any; index: number }) => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: isHovered ? 1 : 0 }}
-            className="absolute inset-0 bg-cyan-500/20 backdrop-blur-sm flex items-center justify-center"
+            className="absolute inset-0 bg-blue-500/20 backdrop-blur-sm flex items-center justify-center"
           >
             <div className="flex space-x-4">
               <Button
                 size="sm"
-                className="bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30"
+                className="bg-white/90 backdrop-blur-sm border border-gray-200 hover:bg-white text-black"
               >
                 <Eye className="w-4 h-4 mr-2" />
                 Preview
@@ -77,7 +77,7 @@ const ProjectCard3D = ({ project, index }: { project: any; index: number }) => {
               <Button
                 size="sm"
                 variant="outline"
-                className="border-white/30 text-white hover:bg-white/20"
+                className="border-white/80 text-white hover:bg-white/20"
               >
                 <Code className="w-4 h-4 mr-2" />
                 Code
@@ -89,10 +89,10 @@ const ProjectCard3D = ({ project, index }: { project: any; index: number }) => {
         {/* Content */}
         <div className="p-6 space-y-4">
           <div>
-            <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+            <h3 className="text-2xl font-bold text-black mb-2 group-hover:text-blue-600 transition-colors">
               {project.title}
             </h3>
-            <p className="text-gray-300 line-clamp-3 leading-relaxed">
+            <p className="text-gray-700 line-clamp-3 leading-relaxed">
               {project.description}
             </p>
           </div>
@@ -103,7 +103,7 @@ const ProjectCard3D = ({ project, index }: { project: any; index: number }) => {
               <motion.span
                 key={tech}
                 whileHover={{ scale: 1.1 }}
-                className="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm font-medium border border-cyan-500/30"
+                className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium border border-blue-200"
               >
                 {tech}
               </motion.span>
@@ -113,14 +113,14 @@ const ProjectCard3D = ({ project, index }: { project: any; index: number }) => {
           {/* Action Buttons */}
           <div className="flex space-x-4 pt-4">
             <Button
-              className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white border-0"
+              className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white border-0"
             >
               <ExternalLink className="w-4 h-4 mr-2" />
               Live Demo
             </Button>
             <Button
               variant="outline"
-              className="border-gray-600 text-gray-300 hover:bg-gray-700 hover:text-white"
+              className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-black"
             >
               <Github className="w-4 h-4 mr-2" />
               Code
@@ -132,7 +132,7 @@ const ProjectCard3D = ({ project, index }: { project: any; index: number }) => {
         <motion.div
           className="absolute inset-0 rounded-2xl"
           style={{
-            background: "linear-gradient(45deg, transparent, rgba(6, 182, 212, 0.1), transparent)",
+            background: "linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.1), transparent)",
             opacity: isHovered ? 1 : 0,
             transition: "opacity 0.3s ease"
           }}
@@ -202,16 +202,16 @@ const EnhancedProjectsSection = () => {
 
   return (
     <section id="projects" className="py-20 relative overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-950 to-gray-900" />
+      {/* Clean background with light blue accents */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-gray-50" />
       <motion.div
         className="absolute inset-0"
         animate={{
           background: [
-            "radial-gradient(circle at 0% 0%, rgba(6, 182, 212, 0.2) 0%, transparent 50%)",
-            "radial-gradient(circle at 100% 100%, rgba(168, 85, 247, 0.2) 0%, transparent 50%)",
-            "radial-gradient(circle at 0% 100%, rgba(6, 182, 212, 0.2) 0%, transparent 50%)",
-            "radial-gradient(circle at 100% 0%, rgba(168, 85, 247, 0.2) 0%, transparent 50%)"
+            "radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.1) 0%, transparent 50%)",
+            "radial-gradient(circle at 100% 100%, rgba(147, 197, 253, 0.1) 0%, transparent 50%)",
+            "radial-gradient(circle at 0% 100%, rgba(59, 130, 246, 0.1) 0%, transparent 50%)",
+            "radial-gradient(circle at 100% 0%, rgba(147, 197, 253, 0.1) 0%, transparent 50%)"
           ]
         }}
         transition={{ duration: 15, repeat: Infinity }}
@@ -231,10 +231,10 @@ const EnhancedProjectsSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           >
-            Featured <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">Projects</span>
+            Featured <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 bg-clip-text text-transparent">Projects</span>
           </motion.h2>
           <motion.p 
-            className="text-xl text-gray-300 max-w-3xl mx-auto"
+            className="text-xl text-gray-700 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}

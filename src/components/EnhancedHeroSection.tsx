@@ -37,15 +37,15 @@ const EnhancedHeroSection = () => {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Professional gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
+      {/* Clean white to light blue gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-slate-50 to-blue-50" />
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-transparent to-violet-500/10"
+        className="absolute inset-0 bg-gradient-to-r from-blue-100/30 via-transparent to-blue-200/30"
         animate={{
           background: [
-            "linear-gradient(45deg, rgba(99, 102, 241, 0.1) 0%, transparent 50%, rgba(139, 92, 246, 0.1) 100%)",
-            "linear-gradient(225deg, rgba(99, 102, 241, 0.1) 0%, transparent 50%, rgba(139, 92, 246, 0.1) 100%)",
-            "linear-gradient(45deg, rgba(99, 102, 241, 0.1) 0%, transparent 50%, rgba(139, 92, 246, 0.1) 100%)"
+            "linear-gradient(45deg, rgba(59, 130, 246, 0.1) 0%, transparent 50%, rgba(147, 197, 253, 0.1) 100%)",
+            "linear-gradient(225deg, rgba(59, 130, 246, 0.1) 0%, transparent 50%, rgba(147, 197, 253, 0.1) 100%)",
+            "linear-gradient(45deg, rgba(59, 130, 246, 0.1) 0%, transparent 50%, rgba(147, 197, 253, 0.1) 100%)"
           ]
         }}
         transition={{ duration: 8, repeat: Infinity }}
@@ -62,7 +62,7 @@ const EnhancedHeroSection = () => {
           <motion.div variants={textVariants} className="space-y-4">
             <motion.p
               variants={textVariants}
-              className="text-indigo-400 font-medium tracking-wider uppercase text-sm"
+              className="text-blue-600 font-medium tracking-wider uppercase text-sm"
             >
               Welcome to my portfolio
             </motion.p>
@@ -71,10 +71,10 @@ const EnhancedHeroSection = () => {
               variants={textVariants}
               className="text-6xl lg:text-8xl font-bold leading-tight"
             >
-              <span className="block bg-gradient-to-r from-white via-slate-200 to-white bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent">
                 Creative
               </span>
-              <span className="block bg-gradient-to-r from-indigo-400 via-violet-500 to-purple-600 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 bg-clip-text text-transparent">
                 Developer
               </span>
             </motion.h1>
@@ -82,7 +82,7 @@ const EnhancedHeroSection = () => {
           
           <motion.p
             variants={textVariants}
-            className="text-xl lg:text-2xl text-slate-300 leading-relaxed max-w-2xl"
+            className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl"
           >
             Building exceptional digital solutions with modern technologies,
             clean architecture, and user-focused design principles.
@@ -95,7 +95,7 @@ const EnhancedHeroSection = () => {
             <Button
               size="lg"
               onClick={() => scrollToSection('#projects')}
-              className="group bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-indigo-500/25"
+              className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-blue-500/25"
             >
               <span className="flex items-center gap-3">
                 View My Work
@@ -107,7 +107,7 @@ const EnhancedHeroSection = () => {
               variant="outline"
               size="lg"
               onClick={() => scrollToSection('#contact')}
-              className="border-2 border-indigo-500/50 text-indigo-400 hover:bg-indigo-500/10 hover:border-indigo-400 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm"
+              className="border-2 border-blue-500/50 text-blue-600 hover:bg-blue-50 hover:border-blue-500 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm"
             >
               <Mail className="w-5 h-5 mr-2" />
               Get In Touch
@@ -128,9 +128,9 @@ const EnhancedHeroSection = () => {
                 href={social.href}
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
-                className="group p-3 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-indigo-500/20 hover:border-indigo-400/50 transition-all duration-300"
+                className="group p-3 rounded-lg bg-white/80 backdrop-blur-sm border border-gray-200 hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 shadow-md"
               >
-                <social.icon className="w-6 h-6 text-slate-400 group-hover:text-indigo-400 transition-colors" />
+                <social.icon className="w-6 h-6 text-gray-600 group-hover:text-blue-600 transition-colors" />
               </motion.a>
             ))}
           </motion.div>
@@ -144,7 +144,7 @@ const EnhancedHeroSection = () => {
           className="flex justify-center items-center h-96"
         >
           <div className="relative">
-            {/* Professional animated geometric shapes */}
+            {/* Clean geometric shapes with light blue theme */}
             <motion.div
               animate={{
                 rotate: [0, 360],
@@ -155,7 +155,7 @@ const EnhancedHeroSection = () => {
                 repeat: Infinity,
                 ease: "linear"
               }}
-              className="w-64 h-64 rounded-2xl bg-gradient-to-r from-indigo-500 via-violet-500 to-purple-600 opacity-20 blur-xl"
+              className="w-64 h-64 rounded-2xl bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 opacity-20 blur-xl"
             />
             <motion.div
               animate={{
@@ -167,7 +167,7 @@ const EnhancedHeroSection = () => {
                 repeat: Infinity,
                 ease: "linear"
               }}
-              className="absolute inset-8 rounded-xl bg-gradient-to-r from-violet-500 via-purple-500 to-indigo-500 opacity-25 blur-lg"
+              className="absolute inset-8 rounded-xl bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 opacity-25 blur-lg"
             />
             <motion.div
               animate={{
@@ -179,7 +179,7 @@ const EnhancedHeroSection = () => {
                 repeat: Infinity,
                 ease: "linear"
               }}
-              className="absolute inset-16 bg-gradient-to-r from-indigo-400 to-violet-600 opacity-30 rounded-lg blur-md"
+              className="absolute inset-16 bg-gradient-to-r from-blue-400 to-blue-600 opacity-30 rounded-lg blur-md"
             />
           </div>
         </motion.div>
@@ -194,8 +194,8 @@ const EnhancedHeroSection = () => {
         onClick={() => scrollToSection('#about')}
       >
         <div className="flex flex-col items-center space-y-2">
-          <span className="text-slate-400 text-sm">Scroll Down</span>
-          <ChevronDown className="w-6 h-6 text-indigo-400" />
+          <span className="text-gray-600 text-sm">Scroll Down</span>
+          <ChevronDown className="w-6 h-6 text-blue-600" />
         </div>
       </motion.div>
     </section>

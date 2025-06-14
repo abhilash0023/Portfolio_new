@@ -49,13 +49,13 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ isDark }) => 
         },
         particles: {
           color: {
-            value: isDark ? ['#06b6d4', '#3b82f6', '#8b5cf6'] : ['#0ea5e9', '#6366f1', '#8b5cf6'],
+            value: isDark ? ['#3b82f6', '#60a5fa', '#93c5fd'] : ['#3b82f6', '#60a5fa', '#93c5fd'],
           },
           links: {
-            color: isDark ? '#06b6d4' : '#3b82f6',
+            color: '#3b82f6',
             distance: 150,
             enable: true,
-            opacity: isDark ? 0.3 : 0.4,
+            opacity: 0.3,
             width: 1,
           },
           move: {
@@ -76,7 +76,7 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ isDark }) => 
             value: 100,
           },
           opacity: {
-            value: isDark ? 0.4 : 0.6,
+            value: 0.4,
             random: true,
             animation: {
               enable: true,
