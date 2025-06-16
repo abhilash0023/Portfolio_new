@@ -176,7 +176,7 @@ const EnhancedProjectsSection: React.FC<EnhancedProjectsSectionProps> = ({ isDar
       title: 'Travel Itinerary Planner',
       description: 'Developed a responsive travel planner using React.js, allowing users to create, manage, and share custom itineraries with real-time weather and map integration.',
       tech: ['React.js', 'JavaScript', 'CSS', 'Weather API', 'Maps API'],
-      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop',
+      image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop&crop=center',
       status: 'Live',
       stars: 124,
       forks: 28
@@ -185,7 +185,7 @@ const EnhancedProjectsSection: React.FC<EnhancedProjectsSectionProps> = ({ isDar
       title: 'E-Commerce Website',
       description: 'Built a dynamic e-commerce platform with React.js, featuring product listings, shopping cart functionality, user authentication, and secure payment integration.',
       tech: ['React.js', 'Node.js', 'MongoDB', 'Stripe', 'Express'],
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop',
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=center',
       status: 'Live',
       stars: 198,
       forks: 45
@@ -194,7 +194,7 @@ const EnhancedProjectsSection: React.FC<EnhancedProjectsSectionProps> = ({ isDar
       title: 'Gemini Clone',
       description: 'Developed a Gemini clone using React and Vite, replicating the core UI and user experience. Integrated the application with the Gemini API to enable real-time conversational functionality.',
       tech: ['React', 'Vite', 'Gemini API', 'JavaScript', 'CSS'],
-      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop&crop=center',
       status: 'Live',
       stars: 156,
       forks: 32
@@ -203,7 +203,7 @@ const EnhancedProjectsSection: React.FC<EnhancedProjectsSectionProps> = ({ isDar
       title: 'Smart-LMS',
       description: 'Built a Smart-LMS (Learning Management System) using React, Vite, Node.js, and MongoDB, providing seamless course management and user interaction. Implemented features like user authentication, course tracking, and dynamic content delivery for an efficient learning experience.',
       tech: ['React', 'Vite', 'Node.js', 'MongoDB', 'Express'],
-      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop',
+      image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=600&fit=crop&crop=center',
       status: 'Live',
       stars: 287,
       forks: 67
@@ -212,7 +212,7 @@ const EnhancedProjectsSection: React.FC<EnhancedProjectsSectionProps> = ({ isDar
       title: 'Portfolio Website',
       description: 'Designed and developed a responsive portfolio website using React, Vite, Node.js, and MongoDB to showcase projects, skills, and personal achievements. Integrated dynamic content management, contact forms, and dark mode support for an enhanced user experience.',
       tech: ['React', 'Vite', 'Node.js', 'MongoDB', 'Tailwind CSS'],
-      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop',
+      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop&crop=center',
       status: 'Live',
       stars: 189,
       forks: 41
