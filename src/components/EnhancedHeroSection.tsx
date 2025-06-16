@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
@@ -47,25 +46,6 @@ const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = fals
           ? 'bg-gradient-to-br from-black via-gray-900 to-gray-800' 
           : 'bg-gradient-to-br from-blue-50 via-white to-indigo-100'
       }`} />
-      <motion.div
-        className={`absolute inset-0 ${
-          isDark 
-            ? 'bg-gradient-to-r from-blue-900/30 via-transparent to-blue-800/30' 
-            : 'bg-gradient-to-r from-blue-200/40 via-transparent to-indigo-200/40'
-        }`}
-        animate={{
-          background: isDark ? [
-            "linear-gradient(45deg, rgba(59, 130, 246, 0.2) 0%, transparent 50%, rgba(147, 197, 253, 0.2) 100%)",
-            "linear-gradient(225deg, rgba(59, 130, 246, 0.2) 0%, transparent 50%, rgba(147, 197, 253, 0.2) 100%)",
-            "linear-gradient(45deg, rgba(59, 130, 246, 0.2) 0%, transparent 50%, rgba(147, 197, 253, 0.2) 100%)"
-          ] : [
-            "linear-gradient(45deg, rgba(59, 130, 246, 0.3) 0%, transparent 50%, rgba(99, 102, 241, 0.3) 100%)",
-            "linear-gradient(225deg, rgba(59, 130, 246, 0.3) 0%, transparent 50%, rgba(99, 102, 241, 0.3) 100%)",
-            "linear-gradient(45deg, rgba(59, 130, 246, 0.3) 0%, transparent 50%, rgba(99, 102, 241, 0.3) 100%)"
-          ]
-        }}
-        transition={{ duration: 8, repeat: Infinity }}
-      />
       
       {/* Floating 3D elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -236,8 +216,8 @@ const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = fals
               }}
             />
             <motion.img
-              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=500&fit=crop&crop=face"
-              alt="Developer working"
+              src="/lovable-uploads/54428ba1-b9d4-41a8-9678-799fdfc44b9e.png"
+              alt="Developer"
               className={`relative w-80 h-80 object-cover rounded-full border-4 shadow-2xl ${
                 isDark 
                   ? 'border-gray-700 shadow-blue-900/50'

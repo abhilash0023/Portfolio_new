@@ -57,8 +57,8 @@ const AboutSection: React.FC<AboutSectionProps> = ({ isDark = false }) => {
                 }}
               />
               <motion.img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=500&fit=crop&crop=face"
-                alt="Developer at work"
+                src="/lovable-uploads/54428ba1-b9d4-41a8-9678-799fdfc44b9e.png"
+                alt="Developer"
                 className={`relative w-80 h-96 object-cover rounded-2xl border-4 shadow-2xl ${
                   isDark 
                     ? 'border-gray-700 shadow-blue-900/50'
