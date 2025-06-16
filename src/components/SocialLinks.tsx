@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Instagram, Github, Youtube, Twitter } from 'lucide-react';
+import { Linkedin, Github, Mail } from 'lucide-react';
 
 interface SocialLinksProps {
   isDark: boolean;
@@ -24,25 +24,22 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ isDark }) => {
       bgColor: isDark ? 'hover:bg-gray-500/20' : 'hover:bg-gray-200'
     },
     {
-      name: 'Instagram',
-      url: 'https://instagram.com/johndoe',
-      icon: Instagram,
-      color: isDark ? 'hover:text-pink-400' : 'hover:text-pink-600',
-      bgColor: isDark ? 'hover:bg-pink-500/20' : 'hover:bg-pink-100'
+      name: 'LeetCode',
+      url: 'https://leetcode.com/johndoe',
+      icon: () => (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.884 2.165 8.132 0l2.706-2.629a1.374 1.374 0 0 0-.961-2.342 1.374 1.374 0 0 0-.961.438l-2.706 2.629a3.035 3.035 0 0 1-4.25 0l-4.278-4.194a3.209 3.209 0 0 1-.678-.943 3.181 3.181 0 0 1-.24-.618 2.82 2.82 0 0 1-.047-1.504 2.86 2.86 0 0 1 .651-1.142L19.435 3.374a1.374 1.374 0 0 0-.961-2.342z"/>
+        </svg>
+      ),
+      color: isDark ? 'hover:text-yellow-400' : 'hover:text-yellow-600',
+      bgColor: isDark ? 'hover:bg-yellow-500/20' : 'hover:bg-yellow-100'
     },
     {
-      name: 'YouTube',
-      url: 'https://youtube.com/@johndoe',
-      icon: Youtube,
+      name: 'Email',
+      url: 'mailto:abikumar0023@gmail.com',
+      icon: Mail,
       color: isDark ? 'hover:text-red-400' : 'hover:text-red-600',
       bgColor: isDark ? 'hover:bg-red-500/20' : 'hover:bg-red-100'
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/johndoe',
-      icon: Twitter,
-      color: isDark ? 'hover:text-cyan-400' : 'hover:text-cyan-600',
-      bgColor: isDark ? 'hover:bg-cyan-500/20' : 'hover:bg-cyan-100'
     }
   ];
 

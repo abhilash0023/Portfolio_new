@@ -45,9 +45,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isDark = false }) => {
   const socialLinks = [
     { name: 'GitHub', url: '#', color: 'hover:text-blue-400' },
     { name: 'LinkedIn', url: '#', color: 'hover:text-blue-500' },
-    { name: 'Twitter', url: '#', color: 'hover:text-blue-400' },
-    { name: 'Instagram', url: '#', color: 'hover:text-blue-600' },
-    { name: 'YouTube', url: '#', color: 'hover:text-blue-500' },
+    { name: 'LeetCode', url: '#', color: 'hover:text-yellow-500' },
+    { name: 'Email', url: 'mailto:abikumar0023@gmail.com', color: 'hover:text-red-500' },
   ];
 
   return (
@@ -104,19 +103,19 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isDark = false }) => {
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
                   <span className="text-white text-sm">📧</span>
                 </div>
-                <span className={isDark ? 'text-gray-300' : 'text-gray-700'}>contact@example.com</span>
+                <span className={isDark ? 'text-gray-300' : 'text-gray-700'}>abikumar0023@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
                   <span className="text-white text-sm">📱</span>
                 </div>
-                <span className={isDark ? 'text-gray-300' : 'text-gray-700'}>+1 (555) 123-4567</span>
+                <span className={isDark ? 'text-gray-300' : 'text-gray-700'}>+91 96005984446</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
                   <span className="text-white text-sm">📍</span>
                 </div>
-                <span className={isDark ? 'text-gray-300' : 'text-gray-700'}>San Francisco, CA</span>
+                <span className={isDark ? 'text-gray-300' : 'text-gray-700'}>Pollachi, Coimbatore</span>
               </div>
             </div>
 
