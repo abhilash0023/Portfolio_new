@@ -173,58 +173,49 @@ const ProjectCard3D = ({ project, index, isDark }: { project: any; index: number
 const EnhancedProjectsSection: React.FC<EnhancedProjectsSectionProps> = ({ isDark = false }) => {
   const projects = [
     {
-      title: 'AI-Powered E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with AI-driven product recommendations, real-time inventory management, and advanced analytics dashboard. Features include user authentication, payment processing, and personalized shopping experiences.',
-      tech: ['React', 'Node.js', 'MongoDB', 'TensorFlow', 'Stripe', 'Socket.io'],
+      title: 'Travel Itinerary Planner',
+      description: 'Developed a responsive travel planner using React.js, allowing users to create, manage, and share custom itineraries with real-time weather and map integration.',
+      tech: ['React.js', 'JavaScript', 'CSS', 'Weather API', 'Maps API'],
+      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop',
+      status: 'Live',
+      stars: 124,
+      forks: 28
+    },
+    {
+      title: 'E-Commerce Website',
+      description: 'Built a dynamic e-commerce platform with React.js, featuring product listings, shopping cart functionality, user authentication, and secure payment integration.',
+      tech: ['React.js', 'Node.js', 'MongoDB', 'Stripe', 'Express'],
       image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop',
       status: 'Live',
-      stars: 245,
-      forks: 67
-    },
-    {
-      title: 'Real-time Collaboration Platform',
-      description: 'Modern team collaboration tool with real-time editing, video conferencing, file sharing, and project management features. Built with cutting-edge technologies for optimal performance.',
-      tech: ['Next.js', 'TypeScript', 'WebRTC', 'PostgreSQL', 'Redis', 'AWS'],
-      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop',
-      status: 'Live',
-      stars: 189,
-      forks: 34
-    },
-    {
-      title: '3D Interactive Portfolio',
-      description: 'Immersive 3D portfolio website showcasing creative projects with interactive elements, particle systems, and smooth animations. Features include dynamic lighting and responsive design.',
-      tech: ['React', 'Three.js', 'Framer Motion', 'GSAP', 'WebGL'],
-      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop',
-      status: 'Development',
-      stars: 156,
-      forks: 29
-    },
-    {
-      title: 'Machine Learning Dashboard',
-      description: 'Comprehensive ML dashboard for data visualization, model training, and performance monitoring. Includes real-time analytics, automated reporting, and collaborative features.',
-      tech: ['Python', 'FastAPI', 'React', 'D3.js', 'TensorFlow', 'Docker'],
-      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop',
-      status: 'Live',
-      stars: 312,
-      forks: 89
-    },
-    {
-      title: 'Blockchain Voting System',
-      description: 'Secure and transparent voting system built on blockchain technology. Features include voter verification, real-time results, and comprehensive audit trails.',
-      tech: ['Solidity', 'Web3.js', 'React', 'Ethereum', 'IPFS', 'MetaMask'],
-      image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&h=600&fit=crop',
-      status: 'Development',
-      stars: 278,
+      stars: 198,
       forks: 45
     },
     {
-      title: 'IoT Smart Home Hub',
-      description: 'Centralized smart home control system with device management, automation rules, energy monitoring, and mobile app integration for remote control.',
-      tech: ['Vue.js', 'Node.js', 'MQTT', 'InfluxDB', 'Docker', 'Raspberry Pi'],
+      title: 'Gemini Clone',
+      description: 'Developed a Gemini clone using React and Vite, replicating the core UI and user experience. Integrated the application with the Gemini API to enable real-time conversational functionality.',
+      tech: ['React', 'Vite', 'Gemini API', 'JavaScript', 'CSS'],
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop',
+      status: 'Live',
+      stars: 156,
+      forks: 32
+    },
+    {
+      title: 'Smart-LMS',
+      description: 'Built a Smart-LMS (Learning Management System) using React, Vite, Node.js, and MongoDB, providing seamless course management and user interaction. Implemented features like user authentication, course tracking, and dynamic content delivery for an efficient learning experience.',
+      tech: ['React', 'Vite', 'Node.js', 'MongoDB', 'Express'],
       image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop',
       status: 'Live',
-      stars: 198,
-      forks: 52
+      stars: 287,
+      forks: 67
+    },
+    {
+      title: 'Portfolio Website',
+      description: 'Designed and developed a responsive portfolio website using React, Vite, Node.js, and MongoDB to showcase projects, skills, and personal achievements. Integrated dynamic content management, contact forms, and dark mode support for an enhanced user experience.',
+      tech: ['React', 'Vite', 'Node.js', 'MongoDB', 'Tailwind CSS'],
+      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop',
+      status: 'Live',
+      stars: 189,
+      forks: 41
     }
   ];
 
