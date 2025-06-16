@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
@@ -106,7 +105,7 @@ const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = fals
                   ? 'from-white via-gray-200 to-white' 
                   : 'from-gray-900 via-gray-700 to-gray-900'
               } bg-clip-text text-transparent`}>
-                I'M ABHILASH
+                I'M ABHI
               </span>
               <span className={`block bg-gradient-to-r ${
                 isDark 
