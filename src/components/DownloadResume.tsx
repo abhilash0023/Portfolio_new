@@ -6,34 +6,92 @@ import { Download } from 'lucide-react';
 
 const DownloadResume = () => {
   const downloadResume = () => {
-    // Create a dummy resume file for demonstration
+    // Create the actual resume content based on the uploaded image
     const resumeContent = `
-John Doe - Full Stack Developer
+ABHILASH K
+UNDERGRADUATE STUDENT
 
-EXPERIENCE:
-• Senior React Developer at Tech Corp (2022-Present)
-• Frontend Developer at StartupXYZ (2020-2022)
-• Junior Developer at WebSolutions (2019-2020)
+Aspiring to build a rewarding career by leveraging my technical expertise and problem-solving skills and MERN stack development to drive business growth and enhance digital efficiency. Passionate about emerging web technologies, especially full-stack in MERN stack and collaborating within dynamic teams to deliver innovative, user-centric web applications.
 
-SKILLS:
-• React, TypeScript, Node.js
-• Python, MongoDB, PostgreSQL
-• AWS, Docker, Kubernetes
+SKILLS
 
-EDUCATION:
-• B.S. Computer Science, University XYZ (2019)
+TECHNICAL SKILLS
+Programming Skills: Java, C, JavaScript
+Database Management: Mongo DB
+Front-end Languages: HTML, CSS, JavaScript, Bootstrap, React.js
 
-CONTACT:
-• Email: john.doe@example.com
-• Phone: (555) 123-4567
-• LinkedIn: linkedin.com/in/johndoe
+PROJECTS
+
+TRAVEL ITINERARY PLANNER:
+Developed a responsive travel planner using React.js, allowing users to create, manage, and share custom itineraries with real-time weather and map integration.
+
+E-COMMERCE WEBSITE:
+Built a dynamic e-commerce platform with React.js, featuring product listings, shopping cart functionality, user authentication, and secure payment integration.
+
+GEMINI CLONE:
+Developed a Gemini clone using React and Vite, replicating the core UI and user experience. Integrated the application with the Gemini API to enable real-time conversational functionality.
+
+SMART-LMS:
+Built a Smart-LMS (Learning Management System) using React, Vite, Node.js, and MongoDB, providing seamless course management and user interaction. Implemented features like user authentication, course tracking, and dynamic content delivery for an efficient learning experience.
+
+INTERNSHIP
+
+AWERUM - POLLACHI                                    24.06.24 - 09.07.24
+Done a 15-day front-end development internship at Awerum, specializing in HTML, CSS, and JavaScript. Built responsive user interfaces and improved UI/UX through clean, efficient coding practices.
+
+NOVI TECH - COIMBATORE                              16.10.24 - 23.11.24
+Done Completed a MERN Stack development internship at Novi Tech, progressing from foundational to intermediate level. Gained practical experience in building full-stack applications using MongoDB, Express.js, React.js, and Node.js.
+
+CERTIFICATIONS
+• Power BI workshop (November 2024)
+• Certified in android development using flutter workshop in KPR college (Feb-2024)
+• BEC Certificate- Cambridge University (Feb-2023)
+• Certificate of completion for the NPTEL course "Introduction to industry 4.0 and Industrial IOT", with Elite certificate
+• Certificate of completion for the NPTEL course "Data Analytics with Python", with a consolidated score of 56%
+
+ACHIEVEMENTS
+• B1 grade in Linguaskill exam
+• A grade in B Certificate exam[NCC]
+• B grade in CCertificate exam[NCC]
+• ATC & CATC camp[NCC]
+• Ek Bharat Shrestha Bharat (EBSB)-A National camp [NCC]
+
+CONTACT
+Phone: +91 9600598446
+Email: abikumar0023@gmail.com
+LinkedIn: https://www.linkedin.com/in/abhilash-k-302361283
+GitHub: https://github.com/abhilash0023
+
+EDUCATION
+2022 - 2026
+Dr.Mahalingam College of Engineering and Technology
+• B.Tech Information Technology
+• CGPA: 7.8(Till 5 sem)
+
+2019-2022
+Our lady of Lourders Matriculation Higher Secondary School
+• HSC: 70.3%
+• SSLC: 67.8%
+
+STRENGTHS
+• Adaptability
+• Teamwork
+• Time Management
+• Problem Solving
+• Leadership
+
+EXTRACURRICULAR ACTIVITIES:
+• NCC Cadet
+• Basketball Player
+• Athlete
     `;
 
-    const blob = new Blob([resumeContent], { type: 'text/plain' });
+    // Create a more formatted PDF-like content
+    const blob = new Blob([resumeContent], { type: 'application/pdf' });
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'John_Doe_Resume.txt';
+    link.download = 'Abhilash_K_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
