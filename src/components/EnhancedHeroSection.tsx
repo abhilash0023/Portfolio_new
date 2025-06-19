@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
@@ -167,12 +168,14 @@ const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = fals
             className="flex justify-center lg:justify-start space-x-6 pt-8"
           >
             {[
-              { icon: Github, href: "#", label: "GitHub" },
-              { icon: Linkedin, href: "#", label: "LinkedIn" }
+              { icon: Github, href: "https://github.com/abhilash0023", label: "GitHub" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/abhilash-k-302361283", label: "LinkedIn" }
             ].map((social, index) => (
               <motion.a
                 key={social.label}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
                 className={`group p-3 rounded-lg backdrop-blur-sm border transition-all duration-300 shadow-md ${
@@ -216,8 +219,8 @@ const EnhancedHeroSection: React.FC<EnhancedHeroSectionProps> = ({ isDark = fals
               }}
             />
             <motion.img
-              src="/lovable-uploads/54428ba1-b9d4-41a8-9678-799fdfc44b9e.png"
-              alt="Developer"
+              src="/lovable-uploads/4b0f87c4-b2dd-4ae0-bb31-58d81a02ac0b.png"
+              alt="Abhi"
               className={`relative w-80 h-80 object-cover rounded-full border-4 shadow-2xl ${
                 isDark 
                   ? 'border-gray-700 shadow-blue-900/50'
