@@ -104,8 +104,8 @@ const AboutSection: React.FC<AboutSectionProps> = ({ isDark = false }) => {
                 isDark ? 'text-gray-200' : 'text-gray-700'
               }`}>
                 I'm a passionate full-stack developer with a love for creating innovative
-                web applications. With expertise in modern technologies like React, Node.js,
-                and cloud platforms, I bring ideas to life through clean, efficient code.
+                web applications. With expertise in modern technologies like React, Node.js. 
+                I bring ideas to life through clean, efficient code.
               </p>
             </motion.div>
 
@@ -122,10 +122,8 @@ const AboutSection: React.FC<AboutSectionProps> = ({ isDark = false }) => {
               <p className={`text-lg leading-relaxed font-medium ${
                 isDark ? 'text-gray-200' : 'text-gray-700'
               }`}>
-                My journey in software development spans over 5 years, during which I've
-                worked on diverse projects ranging from e-commerce platforms to AI-powered
-                applications. I'm always eager to learn new technologies and tackle
-                challenging problems.
+                I have worked on academic and personal projects, including web development and AI-based applications. 
+                I am eager to continuously learn new technologies, grow my skills, and contribute to impactful projects.
               </p>
             </motion.div>
 
